@@ -1,0 +1,875 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0B0B0D">
+
+  <title>Music & Media Academy | rocksKING Productions</title>
+
+  <meta
+    name="description"
+    content="Explore music production training at rocksKING Music & Media Academy."
+  >
+
+  <link rel="icon" type="image/png" href="images/rocksking-logo.png">
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    :root {
+      --bg: #0B0B0D;
+      --surface: #151518;
+      --gold: #C9A45C;
+      --gold-light: #E0BD78;
+      --text: #F5F5F5;
+      --muted: #A4A4AD;
+      --border: #303035;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 100px;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    .container-main {
+      width: min(100% - 40px, 1200px);
+      margin-inline: auto;
+    }
+
+    .text-muted {
+      color: var(--muted);
+    }
+
+    .text-gold {
+      color: var(--gold);
+    }
+
+    .border-brand {
+      border-color: var(--border);
+    }
+
+    .menu-link {
+      color: var(--muted);
+      transition: color .2s ease;
+    }
+
+    .menu-link:hover {
+      color: var(--gold);
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 13px 20px;
+      border: 1px solid var(--gold);
+      border-radius: 6px;
+      background: var(--gold);
+      color: #0B0B0D;
+      font-weight: 700;
+      transition: .2s ease;
+    }
+
+    .btn-primary:hover {
+      background: var(--gold-light);
+      transform: translateY(-2px);
+    }
+
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 13px 20px;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      color: var(--text);
+      transition: .2s ease;
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--gold);
+      color: var(--gold);
+    }
+
+    .hero {
+      background:
+        radial-gradient(
+          ellipse at 80% 20%,
+          rgba(201,164,92,.15),
+          transparent 45%
+        ),
+        linear-gradient(135deg, #171719, #0B0B0D 75%);
+    }
+
+    .eyebrow {
+      color: var(--gold);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+    }
+
+    .panel {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+    }
+
+    .student-card {
+      overflow: hidden;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      transition: border-color .2s ease, transform .2s ease;
+    }
+
+    .student-card:hover {
+      border-color: var(--gold);
+      transform: translateY(-4px);
+    }
+
+    .student-portrait {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 50% 30%, #35302A, transparent 55%),
+        linear-gradient(145deg, #242428, #101012);
+      color: var(--gold);
+      font-size: 42px;
+      font-weight: 800;
+      letter-spacing: .08em;
+    }
+
+    .student-portrait img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .detail-number {
+      color: var(--gold);
+      font-size: 25px;
+      font-weight: 800;
+    }
+
+    .mobile-menu {
+      display: none;
+    }
+
+    .mobile-menu.is-open {
+      display: flex;
+    }
+
+    .fee-card {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      padding: 25px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+    }
+
+    .fee-card.featured {
+      border-color: var(--gold);
+    }
+
+    .section-rule {
+      height: 1px;
+      background: var(--border);
+    }
+
+    @media (max-width: 767px) {
+      .container-main {
+        width: min(100% - 32px, 1200px);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        transition-duration: .01ms !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVIGATION -->
+  <header class="sticky top-0 z-50 border-b border-brand bg-[#0B0B0D]/95 backdrop-blur">
+    <nav
+      class="container-main flex min-h-[76px] items-center justify-between gap-6"
+      aria-label="Main navigation"
+    >
+      <a href="index.html" aria-label="rocksKING Productions home">
+        <img
+          src="images/rocksking-logo.png"
+          alt="rocksKING Productions"
+          class="h-12 w-auto object-contain"
+        >
+      </a>
+
+      <div class="hidden items-center gap-7 md:flex">
+        <a href="index.html" class="menu-link text-sm">Home</a>
+        <a href="services.html" class="menu-link text-sm">Services</a>
+        <a href="portfolio.html" class="menu-link text-sm">Our Work</a>
+        <a
+          href="academy.html"
+          class="text-sm font-semibold text-gold"
+          aria-current="page"
+        >Academy</a>
+        <a href="about.html" class="menu-link text-sm">About</a>
+        <a href="contact.html" class="btn-primary text-sm">Let's Talk ↗</a>
+      </div>
+
+      <button
+        id="menu-toggle"
+        class="rounded border border-brand px-3 py-2 text-sm md:hidden"
+        type="button"
+        aria-controls="mobile-menu"
+        aria-expanded="false"
+      >
+        Menu
+      </button>
+    </nav>
+
+    <div
+      id="mobile-menu"
+      class="mobile-menu container-main flex-col gap-5 pb-6 md:hidden"
+    >
+      <a href="index.html" class="menu-link">Home</a>
+      <a href="services.html" class="menu-link">Services</a>
+      <a href="portfolio.html" class="menu-link">Our Work</a>
+      <a href="academy.html" class="text-gold">Academy</a>
+      <a href="about.html" class="menu-link">About</a>
+      <a href="contact.html" class="menu-link">Contact</a>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="hero border-b border-brand">
+      <div class="container-main py-20 md:py-28">
+
+        <p class="eyebrow mb-5">rocksKING Music & Media Academy</p>
+
+        <h1 class="max-w-4xl text-4xl font-black leading-tight tracking-tight sm:text-6xl">
+          Learn the craft.
+          <span class="text-gold">Build your sound.</span>
+        </h1>
+
+        <p class="mt-6 max-w-2xl text-base leading-8 text-muted md:text-lg">
+          A practical music production program designed to help aspiring
+          creatives develop their skills through focused learning and studio
+          sessions.
+        </p>
+
+        <div class="mt-8 flex flex-wrap gap-3">
+          <a href="#course" class="btn-primary">Explore the course ↓</a>
+          <a href="#students" class="btn-secondary">Meet our students</a>
+        </div>
+
+        <div class="mt-12 grid grid-cols-1 gap-4 sm:grid-cols-3">
+          <div class="rounded-lg border border-brand bg-black/20 p-5">
+            <p class="detail-number">10 Weeks</p>
+            <p class="mt-2 text-sm text-muted">Program duration</p>
+          </div>
+
+          <div class="rounded-lg border border-brand bg-black/20 p-5">
+            <p class="detail-number">3 Sessions</p>
+            <p class="mt-2 text-sm text-muted">Per week</p>
+          </div>
+
+          <div class="rounded-lg border border-brand bg-black/20 p-5">
+            <p class="detail-number">2 Hours</p>
+            <p class="mt-2 text-sm text-muted">Per session</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- INTRODUCTION -->
+    <section class="py-16 md:py-20">
+      <div class="container-main grid grid-cols-1 gap-10 md:grid-cols-2 md:items-center">
+
+        <div>
+          <p class="eyebrow mb-4">About the academy</p>
+
+          <h2 class="text-3xl font-bold leading-tight sm:text-4xl">
+            More than learning software.
+            <span class="text-gold">Learn production.</span>
+          </h2>
+
+          <p class="mt-5 leading-8 text-muted">
+            The rocksKING Music & Media Academy offers a flexible approach
+            to music production training. Students can choose the topics they
+            want to learn and follow the academic calendar to plan their sessions.
+          </p>
+
+          <p class="mt-4 leading-8 text-muted">
+            The program assumes students already have fundamental music and
+            computing skills. Where extra instruction is needed, it may use
+            part of the scheduled session.
+          </p>
+        </div>
+
+        <div class="panel p-6 md:p-8">
+          <p class="eyebrow mb-5">The learning experience</p>
+
+          <div class="space-y-5">
+            <div class="flex gap-4">
+              <span class="text-gold">01</span>
+              <div>
+                <h3 class="font-bold">Flexible topic selection</h3>
+                <p class="mt-1 text-sm leading-6 text-muted">
+                  Choose the topics that fit your learning goals.
+                </p>
+              </div>
+            </div>
+
+            <div class="section-rule"></div>
+
+            <div class="flex gap-4">
+              <span class="text-gold">02</span>
+              <div>
+                <h3 class="font-bold">Structured schedule</h3>
+                <p class="mt-1 text-sm leading-6 text-muted">
+                  Check the academic calendar for topics and session dates.
+                </p>
+              </div>
+            </div>
+
+            <div class="section-rule"></div>
+
+            <div class="flex gap-4">
+              <span class="text-gold">03</span>
+              <div>
+                <h3 class="font-bold">Studio-based location</h3>
+                <p class="mt-1 text-sm leading-6 text-muted">
+                  Sessions take place at rocksKING Studio.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- STUDENTS AND ALUMNI -->
+    <section id="students" class="border-y border-brand bg-[#111113] py-16 md:py-24">
+      <div class="container-main">
+
+        <div class="mb-10 max-w-2xl">
+          <p class="eyebrow mb-4">Our community</p>
+
+          <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">
+            Our Students & Alumni
+          </h2>
+
+          <p class="mt-4 leading-7 text-muted">
+            Meet some of the people who have been part of the rocksKING
+            Music & Media Academy learning journey.
+          </p>
+        </div>
+
+        <!--
+          TEMPORARY IMAGE PLACEHOLDERS
+
+          When you obtain a student's image URL, replace the initials inside
+          the student-portrait element with an img element.
+
+          Example:
+          <div class="student-portrait">
+            <img src="PASTE-IMAGE-URL-HERE" alt="Student name">
+          </div>
+
+          Only use images you have permission to publish.
+        -->
+
+        <div class="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+
+          <!-- STUDENT 1 -->
+          <article class="student-card">
+            <div class="student-portrait" aria-hidden="true">MP</div>
+            <div class="p-5">
+              <h3 class="text-lg font-bold">Miki Pop</h3>
+              <p class="mt-2 text-sm text-gold">Alumnus · 2020</p>
+            </div>
+          </article>
+
+          <!-- STUDENT 2 -->
+          <article class="student-card">
+            <div class="student-portrait" aria-hidden="true">DS</div>
+            <div class="p-5">
+              <h3 class="text-lg font-bold">DJ Smith</h3>
+              <p class="mt-2 text-sm text-gold">Student</p>
+            </div>
+          </article>
+
+          <!-- STUDENT 3 -->
+          <article class="student-card">
+            <div class="student-portrait" aria-hidden="true">KM</div>
+            <div class="p-5">
+              <h3 class="text-lg font-bold">Kecyjoe Mix</h3>
+              <p class="mt-2 text-sm text-gold">Alumnus</p>
+            </div>
+          </article>
+
+          <!-- STUDENT 4 -->
+          <article class="student-card">
+            <div class="student-portrait" aria-hidden="true">JW</div>
+            <div class="p-5">
+              <h3 class="text-lg font-bold">Joshua Winter</h3>
+              <p class="mt-2 text-sm text-gold">Student</p>
+            </div>
+          </article>
+
+          <!-- STUDENT 5 -->
+          <article class="student-card">
+            <div class="student-portrait" aria-hidden="true">B</div>
+            <div class="p-5">
+              <h3 class="text-lg font-bold">Briana</h3>
+              <p class="mt-2 text-sm text-gold">Student</p>
+            </div>
+          </article>
+
+          <!-- STUDENT 6 -->
+          <article class="student-card">
+            <div class="student-portrait" aria-hidden="true">P</div>
+            <div class="p-5">
+              <h3 class="text-lg font-bold">Preesca</h3>
+              <p class="mt-2 text-sm text-gold">RMMA Alumnus</p>
+            </div>
+          </article>
+
+        </div>
+
+        <p class="mt-6 text-sm leading-6 text-muted">
+          Student photographs are unavailable at the moment.
+        </p>
+
+      </div>
+    </section>
+
+    <!-- COURSE OUTLINE -->
+    <section id="course" class="py-16 md:py-24">
+      <div class="container-main">
+
+        <div class="mb-10 max-w-2xl">
+          <p class="eyebrow mb-4">The program</p>
+
+          <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">
+            Music Production
+          </h2>
+
+          <p class="mt-4 leading-7 text-muted">
+            Explore the course structure and choose the topics you want to
+            focus on. Use the academic calendar to see when each topic is taught.
+          </p>
+        </div>
+
+        <div class="panel p-6 md:p-8">
+          <div class="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
+            <div>
+              <p class="eyebrow mb-2">Course outline</p>
+              <h3 class="text-xl font-bold">Your learning, your focus.</h3>
+              <p class="mt-2 max-w-xl text-sm leading-6 text-muted">
+                The academy's topic schedule is maintained separately.
+                Open the official page to review the current course outline
+                and available topics.
+              </p>
+            </div>
+
+            <a
+              href="https://sites.google.com/view/rockskingprod/acedemy-of-media-music"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn-primary shrink-0"
+            >
+              View course outline ↗
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- DURATION, TIME AND VENUE -->
+    <section id="schedule" class="border-y border-brand bg-[#111113] py-16 md:py-20">
+      <div class="container-main">
+
+        <div class="mb-10">
+          <p class="eyebrow mb-4">Plan your sessions</p>
+          <h2 class="text-3xl font-bold sm:text-4xl">
+            Duration, Time & Venue
+          </h2>
+        </div>
+
+        <div class="grid grid-cols-1 gap-5 md:grid-cols-3">
+
+          <article class="panel p-6">
+            <p class="eyebrow mb-4">Duration</p>
+            <h3 class="text-2xl font-bold">10 Weeks</h3>
+            <p class="mt-3 leading-7 text-muted">
+              The program runs three times a week, with three sessions
+              scheduled each week.
+            </p>
+          </article>
+
+          <article class="panel p-6">
+            <p class="eyebrow mb-4">Session time</p>
+            <h3 class="text-2xl font-bold">10 AM – 12 Noon</h3>
+            <p class="mt-3 leading-7 text-muted">
+              Each session lasts two hours.
+            </p>
+          </article>
+
+          <article class="panel p-6">
+            <p class="eyebrow mb-4">Venue</p>
+            <h3 class="text-2xl font-bold">rocksKING Studio</h3>
+            <p class="mt-3 leading-7 text-muted">
+              Visit the studio at the location shared by the academy.
+            </p>
+
+            <a
+              class="menu-link mt-4 inline-flex text-sm font-semibold"
+              href="https://maps.app.goo.gl/XC81TNEo7gkLFEPb9"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Get directions ↗
+            </a>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ACADEMIC CALENDAR -->
+    <section id="calendar" class="py-16 md:py-20">
+      <div class="container-main">
+
+        <div class="panel p-6 md:p-10">
+          <p class="eyebrow mb-4">Dates & planning</p>
+
+          <h2 class="text-3xl font-bold sm:text-4xl">
+            Academic Calendar
+          </h2>
+
+          <p class="mt-4 max-w-2xl leading-7 text-muted">
+            Check the academy's schedule to see the topics and their dates.
+            Since students can choose specific topics, review the calendar
+            before deciding which sessions to attend.
+          </p>
+
+          <div class="mt-7 rounded-lg border border-brand bg-black/20 p-5">
+            <h3 class="font-bold">Need a makeup class?</h3>
+
+            <p class="mt-2 leading-7 text-muted">
+              If you miss a class or topic, arrange a makeup session with
+              the instructor. A little extra cost may apply, and only one
+              makeup class is permitted per week.
+            </p>
+          </div>
+
+          <a
+            href="https://sites.google.com/view/rockskingprod/acedemy-of-media-music"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn-primary mt-7"
+          >
+            View official schedule ↗
+          </a>
+
+          <!--
+            Replace the link above with the direct academic-calendar URL
+            when the instructor provides it.
+          -->
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- FEES -->
+    <section id="fees" class="border-y border-brand bg-[#111113] py-16 md:py-24">
+      <div class="container-main">
+
+        <div class="mb-10 max-w-2xl">
+          <p class="eyebrow mb-4">Investment</p>
+
+          <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">
+            Course Fees
+          </h2>
+
+          <p class="mt-4 leading-7 text-muted">
+            Choose the program option that suits you. Confirm the current
+            availability and payment arrangements with the academy.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 gap-5 md:grid-cols-2">
+
+          <!-- STANDARD -->
+          <article class="fee-card">
+            <p class="eyebrow">Standard</p>
+
+            <h3 class="mt-4 text-3xl font-bold">
+              $150
+            </h3>
+
+            <p class="mt-3 leading-7 text-muted">
+              The standard program option.
+            </p>
+
+            <div class="section-rule my-6"></div>
+
+            <p class="text-sm text-muted">Pay as you go</p>
+
+            <p class="mt-2 text-2xl font-bold">
+              $5 <span class="text-sm font-normal text-muted">per session/topic</span>
+            </p>
+
+            <a
+              href="contact.html"
+              class="btn-secondary mt-8 w-full"
+            >
+              Ask about enrollment
+            </a>
+          </article>
+
+          <!-- EXCLUSIVE -->
+          <article class="fee-card featured">
+            <p class="eyebrow">Exclusive</p>
+
+            <h3 class="mt-4 text-3xl font-bold">
+              $300
+            </h3>
+
+            <p class="mt-3 leading-7 text-muted">
+              The exclusive program option.
+            </p>
+
+            <div class="section-rule my-6"></div>
+
+            <p class="text-sm text-muted">Pay as you go</p>
+
+            <p class="mt-2 text-2xl font-bold">
+              $10 <span class="text-sm font-normal text-muted">per session/topic</span>
+            </p>
+
+            <a
+              href="contact.html"
+              class="btn-primary mt-8 w-full"
+            >
+              Ask about enrollment
+            </a>
+          </article>
+
+        </div>
+
+        <p class="mt-6 text-sm leading-6 text-muted">
+          Fees are displayed as stated on the supplied academy page.
+          Confirm the current prices and payment terms before enrolling.
+        </p>
+
+      </div>
+    </section>
+
+    <!-- NOTES -->
+    <section id="notes" class="py-16 md:py-24">
+      <div class="container-main">
+
+        <div class="mb-10 max-w-2xl">
+          <p class="eyebrow mb-4">Before you enroll</p>
+
+          <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">
+            Important Notes
+          </h2>
+        </div>
+
+        <div class="grid grid-cols-1 gap-5 md:grid-cols-2">
+
+          <article class="panel p-6">
+            <div class="mb-4 flex h-10 w-10 items-center justify-center rounded-lg border border-brand text-gold">
+              01
+            </div>
+
+            <h3 class="text-lg font-bold">Prerequisites</h3>
+
+            <p class="mt-3 leading-7 text-muted">
+              This is not a general music or computer training class.
+              Students are expected to have fundamental music and computing
+              skills. Basic concepts are not the main focus of the program.
+            </p>
+          </article>
+
+          <article class="panel p-6">
+            <div class="mb-4 flex h-10 w-10 items-center justify-center rounded-lg border border-brand text-gold">
+              02
+            </div>
+
+            <h3 class="text-lg font-bold">Additional instruction</h3>
+
+            <p class="mt-3 leading-7 text-muted">
+              If a student needs foundational music or computer instruction,
+              it may be provided during a scheduled session. This reduces
+              the time available for the main course, and additional sessions
+              may need to be purchased.
+            </p>
+          </article>
+
+          <article class="panel p-6 md:col-span-2">
+            <div class="mb-4 flex h-10 w-10 items-center justify-center rounded-lg border border-brand text-gold">
+              03
+            </div>
+
+            <h3 class="text-lg font-bold">Flexible learning</h3>
+
+            <p class="mt-3 leading-7 text-muted">
+              Students may choose the topics they wish to learn. Check the
+              academic calendar to find out when those topics will be taught
+              and plan sessions accordingly.
+            </p>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section class="border-t border-brand py-16 md:py-24">
+      <div class="container-main">
+        <div class="rounded-2xl border border-brand p-8 text-center md:p-14">
+
+          <p class="eyebrow mb-4">Make your next move</p>
+
+          <h2 class="mx-auto max-w-2xl text-3xl font-bold tracking-tight sm:text-4xl">
+            Ready to develop your sound?
+          </h2>
+
+          <p class="mx-auto mt-5 max-w-xl leading-7 text-muted">
+            Contact rocksKING Productions to ask about course topics,
+            session arrangements, and enrollment.
+          </p>
+
+          <a href="contact.html" class="btn-primary mt-8">
+            Contact the academy ↗
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-brand py-8">
+    <div class="container-main flex flex-col justify-between gap-6 sm:flex-row sm:items-center">
+
+      <div>
+        <a href="index.html" aria-label="rocksKING Productions home">
+          <img
+            src="images/rocksking-logo.png"
+            alt="rocksKING Productions"
+            class="h-10 w-auto object-contain"
+          >
+        </a>
+
+        <p class="mt-2 text-xs text-muted">
+          Making your imagination loud.
+        </p>
+      </div>
+
+      <div class="flex flex-wrap gap-5 text-sm">
+        <a
+          href="https://instagram.com/rockskingprod"
+          class="menu-link"
+          target="_blank"
+          rel="noopener noreferrer"
+        >Instagram</a>
+
+        <a
+          href="https://youtube.com/@rockskingprod"
+          class="menu-link"
+          target="_blank"
+          rel="noopener noreferrer"
+        >YouTube</a>
+
+        <a
+          href="https://fb.com/rockskingprod"
+          class="menu-link"
+          target="_blank"
+          rel="noopener noreferrer"
+        >Facebook</a>
+
+        <a
+          href="mailto:rockskingmediahub@gmail.com"
+          class="menu-link"
+        >Email</a>
+      </div>
+
+      <p class="text-xs text-muted">
+        © <span id="year"></span> rocksKING Productions
+      </p>
+
+    </div>
+  </footer>
+
+  <script>
+    const menuToggle = document.querySelector("#menu-toggle");
+    const mobileMenu = document.querySelector("#mobile-menu");
+
+    menuToggle.addEventListener("click", () => {
+      const isOpen = mobileMenu.classList.toggle("is-open");
+
+      menuToggle.setAttribute("aria-expanded", String(isOpen));
+      menuToggle.textContent = isOpen ? "Close" : "Menu";
+    });
+
+    mobileMenu.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+        mobileMenu.classList.remove("is-open");
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.textContent = "Menu";
+      });
+    });
+
+    document.querySelector("#year").textContent =
+      new Date().getFullYear();
+  </script>
+
+</body>
+</html>

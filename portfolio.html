@@ -1,0 +1,640 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0B0B0D" />
+  <title>Our Work | rocksKING Productions</title>
+  <meta name="description" content="Meet the artistes and clients connected with rocksKING Productions and explore featured music releases." />
+  <link rel="icon" type="image/png" href="images/rocksking-logo.png" />
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    :root {
+      --bg: #0B0B0D;
+      --surface: #151518;
+      --gold: #C9A45C;
+      --gold-hover: #E0BD78;
+      --text: #F5F5F5;
+      --muted: #A4A4AD;
+      --border: #303035;
+      --content-width: 1200px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 100px;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    a { text-decoration: none; }
+
+    .container-main {
+      width: min(100% - 40px, var(--content-width));
+      margin-inline: auto;
+    }
+
+    .text-muted { color: var(--muted); }
+    .text-accent { color: var(--gold); }
+    .border-brand { border-color: var(--border); }
+
+    .menu-link {
+      color: var(--muted);
+      transition: color 180ms ease;
+    }
+
+    .menu-link:hover,
+    .menu-link:focus-visible {
+      color: var(--gold);
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 13px 19px;
+      border: 1px solid var(--gold);
+      border-radius: 6px;
+      background: var(--gold);
+      color: var(--bg);
+      font-weight: 700;
+      transition: background 180ms ease, transform 180ms ease;
+    }
+
+    .btn-primary:hover {
+      background: var(--gold-hover);
+      transform: translateY(-1px);
+    }
+
+    .page-hero {
+      background:
+        radial-gradient(ellipse at 80% 20%, rgba(201,164,92,.13), transparent 45%),
+        linear-gradient(135deg, #151518, #0B0B0D 70%);
+    }
+
+    .eyebrow {
+      color: var(--gold);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+    }
+
+    .content-card {
+      overflow: hidden;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      background: var(--surface);
+      transition: border-color 180ms ease, transform 180ms ease;
+    }
+
+    .content-card:hover {
+      border-color: rgba(201,164,92,.6);
+    }
+
+    .spotify-frame {
+      display: block;
+      width: 100%;
+      border: 0;
+      border-radius: 12px;
+      background: #121212;
+    }
+
+    .spotify-track { height: 152px; }
+    .spotify-album { height: 352px; }
+
+    .instagram-frame {
+      display: block;
+      width: 100%;
+      min-height: 520px;
+      border: 0;
+      border-radius: 12px;
+      background: #111;
+    }
+
+    .mobile-menu { display: none; }
+    .mobile-menu.is-open { display: flex; }
+
+    @media (max-width: 767px) {
+      .container-main {
+        width: min(100% - 32px, var(--content-width));
+      }
+
+      .instagram-frame { min-height: 480px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        transition-duration: .01ms !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVIGATION -->
+  <header class="sticky top-0 z-50 border-b border-brand bg-[#0B0B0D]/95 backdrop-blur">
+    <nav class="container-main flex min-h-[76px] items-center justify-between gap-6" aria-label="Main navigation">
+
+      <a href="index.html" class="shrink-0 leading-tight" aria-label="rocksKING Productions home">
+        <img
+          src="images/rocksking-logo.png"
+          alt="rocksKING Productions"
+          class="h-12 w-auto object-contain"
+        />
+      </a>
+
+      <div class="hidden items-center gap-7 md:flex">
+        <a href="index.html" class="menu-link text-sm">Home</a>
+        <a href="services.html" class="menu-link text-sm">Services</a>
+        <a href="portfolio.html" class="text-sm font-semibold text-accent" aria-current="page">Our Work</a>
+        <a href="academy.html" class="menu-link text-sm">Academy</a>
+        <a href="about.html" class="menu-link text-sm">About</a>
+        <a href="contact.html" class="btn-primary text-sm">Let's Talk ↗</a>
+      </div>
+
+      <button
+        id="menu-toggle"
+        class="rounded border border-brand p-2 text-sm md:hidden"
+        type="button"
+        aria-controls="mobile-menu"
+        aria-expanded="false"
+      >
+        Menu
+      </button>
+    </nav>
+
+    <div id="mobile-menu" class="mobile-menu container-main flex-col gap-5 pb-6 md:hidden">
+      <a href="index.html" class="menu-link">Home</a>
+      <a href="services.html" class="menu-link">Services</a>
+      <a href="portfolio.html" class="text-accent" aria-current="page">Our Work</a>
+      <a href="academy.html" class="menu-link">Academy</a>
+      <a href="about.html" class="menu-link">About</a>
+      <a href="contact.html" class="menu-link">Contact</a>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- HERO SECTION -->
+    <section class="page-hero border-b border-brand">
+      <div class="container-main py-20 md:py-28">
+        <p class="eyebrow mb-5">The work speaks</p>
+
+        <h1 class="max-w-4xl text-4xl font-black leading-tight tracking-tight sm:text-6xl">
+          Good people.
+          <span class="text-accent">Great sound.</span>
+          <br />
+          Work made to be heard.
+        </h1>
+
+        <p class="mt-6 max-w-2xl leading-7 text-muted">
+          Meet the artistes and explore selected releases connected with rocksKING Productions.
+          From individual tracks to full projects, press play and discover the sound.
+        </p>
+
+        <div class="mt-8 flex flex-wrap gap-3">
+          <a href="#artistes-clients" class="btn-primary">
+            Artistes & clients ↓
+          </a>
+
+          <a
+            href="#previous-works"
+            class="rounded border border-brand px-5 py-3 transition hover:border-[#C9A45C]"
+          >
+            Explore previous works ↓
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- OUR ARTISTES & CLIENTS -->
+    <section id="artistes-clients" class="py-16 md:py-24">
+      <div class="container-main">
+
+        <div class="mb-10 max-w-2xl">
+          <p class="eyebrow mb-4">01 / The people & the sound</p>
+          <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">
+            Our Artistes & Clients
+          </h2>
+
+          <p class="mt-4 leading-7 text-muted">
+            Discover the artist profile, listen to selected tracks, and see a featured
+            moment from the rocksKING creative world.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 gap-6 lg:grid-cols-5">
+
+          <!-- ARTIST PROFILE -->
+          <article class="content-card p-4 sm:p-5 lg:col-span-3">
+            <p class="eyebrow mb-4">Artist profile</p>
+
+            <iframe
+              class="spotify-frame spotify-album"
+              src="https://open.spotify.com/embed/artist/0Pr3HMYwLdZlSiU25V8GBn?utm_source=generator"
+              title="rocksKING artist profile on Spotify"
+              loading="lazy"
+              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+            ></iframe>
+
+            <a
+              class="menu-link mt-4 inline-flex text-sm font-semibold"
+              href="https://open.spotify.com/artist/0Pr3HMYwLdZlSiU25V8GBn"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Open artist profile on Spotify ↗
+            </a>
+          </article>
+
+          <!-- INSTAGRAM FEATURE -->
+          <article class="content-card p-4 sm:p-5 lg:col-span-2">
+            <p class="eyebrow mb-4">Featured moment</p>
+
+            <div class="overflow-hidden rounded-xl bg-[#111]">
+              <iframe
+                class="instagram-frame"
+                src="https://www.instagram.com/reel/DWPCkuxswt0/embed"
+                title="Featured rocksKING Instagram reel"
+                loading="lazy"
+                allowfullscreen
+              ></iframe>
+            </div>
+
+            <a
+              class="menu-link mt-4 inline-flex text-sm font-semibold"
+              href="https://www.instagram.com/reel/DWPCkuxswt0/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Watch reel on Instagram ↗
+            </a>
+          </article>
+
+        </div>
+
+        <!-- SELECTED TRACKS -->
+        <div class="mt-8">
+          <div class="mb-5">
+            <p class="eyebrow mb-2">Selected tracks</p>
+            <h3 class="text-2xl font-bold">A taste of the catalogue</h3>
+          </div>
+
+          <div class="grid grid-cols-1 gap-5 md:grid-cols-2">
+
+            <article class="content-card p-3 sm:p-4">
+              <p class="eyebrow mb-3 px-1">Track 01</p>
+
+              <iframe
+                class="spotify-frame spotify-track"
+                src="https://open.spotify.com/embed/track/1ELTUsiZtevHZRZHFcpvr4?utm_source=generator"
+                title="Featured track one on Spotify"
+                loading="lazy"
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+              ></iframe>
+
+              <a
+                class="menu-link mt-3 inline-flex text-sm font-semibold"
+                href="https://open.spotify.com/track/1ELTUsiZtevHZRZHFcpvr4"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Open track on Spotify ↗
+              </a>
+            </article>
+
+            <article class="content-card p-3 sm:p-4">
+              <p class="eyebrow mb-3 px-1">Track 02</p>
+
+              <iframe
+                class="spotify-frame spotify-track"
+                src="https://open.spotify.com/embed/track/4D4Fvv0wvaJftO2r8stjSS?utm_source=generator"
+                title="Featured track two on Spotify"
+                loading="lazy"
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+              ></iframe>
+
+              <a
+                class="menu-link mt-3 inline-flex text-sm font-semibold"
+                href="https://open.spotify.com/track/4D4Fvv0wvaJftO2r8stjSS"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Open track on Spotify ↗
+              </a>
+            </article>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- PREVIOUS WORKS -->
+    <section id="previous-works" class="border-y border-brand bg-[#111113] py-16 md:py-24">
+      <div class="container-main">
+
+        <div class="mb-10 max-w-2xl">
+          <p class="eyebrow mb-4">02 / Selected projects</p>
+          <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">
+            Previous Works
+          </h2>
+
+          <p class="mt-4 leading-7 text-muted">
+            Explore releases and tracks from the catalogue. Each player lets visitors
+            listen on Spotify, with a direct link available for every item.
+          </p>
+        </div>
+
+        <!-- ALBUMS, EPS AND SINGLES -->
+        <div class="mb-6">
+          <p class="eyebrow mb-4">Albums, EPs & singles</p>
+
+          <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
+
+            <article class="content-card p-3 sm:p-4">
+              <p class="eyebrow mb-3 px-1">Release 01</p>
+
+              <iframe
+                class="spotify-frame spotify-album"
+                src="https://open.spotify.com/embed/album/3w3Uq0yzIL7Fb0o9JtHzhG?utm_source=generator"
+                title="Featured release one on Spotify"
+                loading="lazy"
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+              ></iframe>
+
+              <a
+                class="menu-link mt-4 inline-flex text-sm font-semibold"
+                href="https://open.spotify.com/album/3w3Uq0yzIL7Fb0o9JtHzhG"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Open release ↗
+              </a>
+            </article>
+
+            <article class="content-card p-3 sm:p-4">
+              <p class="eyebrow mb-3 px-1">Release 02</p>
+
+              <iframe
+                class="spotify-frame spotify-album"
+                src="https://open.spotify.com/embed/album/5cSqsG4k3jMgdY5pFUlvix?utm_source=generator"
+                title="Featured release two on Spotify"
+                loading="lazy"
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+              ></iframe>
+
+              <a
+                class="menu-link mt-4 inline-flex text-sm font-semibold"
+                href="https://open.spotify.com/album/5cSqsG4k3jMgdY5pFUlvix"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Open release ↗
+              </a>
+            </article>
+
+            <article class="content-card p-3 sm:p-4">
+              <p class="eyebrow mb-3 px-1">Release 03</p>
+
+              <iframe
+                class="spotify-frame spotify-album"
+                src="https://open.spotify.com/embed/album/1sf9gZ1IANvwqreM4YZ5SO?utm_source=generator"
+                title="Featured release three on Spotify"
+                loading="lazy"
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+              ></iframe>
+
+              <a
+                class="menu-link mt-4 inline-flex text-sm font-semibold"
+                href="https://open.spotify.com/album/1sf9gZ1IANvwqreM4YZ5SO"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Open release ↗
+              </a>
+            </article>
+
+            <article class="content-card p-3 sm:p-4">
+              <p class="eyebrow mb-3 px-1">Release 04</p>
+
+              <iframe
+                class="spotify-frame spotify-album"
+                src="https://open.spotify.com/embed/album/4Yl7qjC5XbnoCGxUW9VQRU?utm_source=generator"
+                title="Featured release four on Spotify"
+                loading="lazy"
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+              ></iframe>
+
+              <a
+                class="menu-link mt-4 inline-flex text-sm font-semibold"
+                href="https://open.spotify.com/album/4Yl7qjC5XbnoCGxUW9VQRU"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Open release ↗
+              </a>
+            </article>
+
+          </div>
+        </div>
+
+        <!-- TRACKS AND PLAYLIST -->
+        <div class="mt-12">
+          <div class="mb-5">
+            <p class="eyebrow mb-2">More from the catalogue</p>
+            <h3 class="text-2xl font-bold">Tracks & playlists</h3>
+          </div>
+
+          <div class="grid grid-cols-1 gap-5 md:grid-cols-2">
+
+            <article class="content-card p-3 sm:p-4">
+              <p class="eyebrow mb-3 px-1">Track 03</p>
+
+              <iframe
+                class="spotify-frame spotify-track"
+                src="https://open.spotify.com/embed/track/40mgHRca5sLFb7w9IK6uKS?utm_source=generator"
+                title="Featured track three on Spotify"
+                loading="lazy"
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+              ></iframe>
+
+              <a
+                class="menu-link mt-3 inline-flex text-sm font-semibold"
+                href="https://open.spotify.com/track/40mgHRca5sLFb7w9IK6uKS"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Open track on Spotify ↗
+              </a>
+            </article>
+
+            <article class="content-card p-3 sm:p-4">
+              <p class="eyebrow mb-3 px-1">Track 04</p>
+
+              <iframe
+                class="spotify-frame spotify-track"
+                src="https://open.spotify.com/embed/track/09VJYBWLgmjAYgq8I7uXfl?utm_source=generator"
+                title="Featured track four on Spotify"
+                loading="lazy"
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+              ></iframe>
+
+              <a
+                class="menu-link mt-3 inline-flex text-sm font-semibold"
+                href="https://open.spotify.com/track/09VJYBWLgmjAYgq8I7uXfl"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Open track on Spotify ↗
+              </a>
+            </article>
+
+            <article class="content-card p-3 sm:p-4 md:col-span-2">
+              <p class="eyebrow mb-3 px-1">Curated playlist</p>
+
+              <iframe
+                class="spotify-frame spotify-album"
+                src="https://open.spotify.com/embed/playlist/6aDRsVNRDtjHYt2muBMaMd?utm_source=generator"
+                title="rocksKING curated Spotify playlist"
+                loading="lazy"
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+              ></iframe>
+
+              <a
+                class="menu-link mt-4 inline-flex text-sm font-semibold"
+                href="https://open.spotify.com/playlist/6aDRsVNRDtjHYt2muBMaMd"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Open playlist on Spotify ↗
+              </a>
+            </article>
+
+          </div>
+        </div>
+
+        <!-- SPOTIFY CALL TO ACTION -->
+        <div class="mt-10 rounded-xl border border-brand bg-[#151518] p-5 sm:p-6">
+          <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+            <div>
+              <p class="eyebrow mb-2">Keep listening</p>
+              <h3 class="text-xl font-bold">
+                Discover the full rocksKING catalogue.
+              </h3>
+              <p class="mt-2 text-sm leading-6 text-muted">
+                Visit the artist profile for more releases, tracks, and updates.
+              </p>
+            </div>
+
+            <a
+              href="https://open.spotify.com/artist/0Pr3HMYwLdZlSiU25V8GBn"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn-primary shrink-0"
+            >
+              Listen on Spotify ↗
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CONTACT CALL TO ACTION -->
+    <section class="border-t border-brand py-16 md:py-24">
+      <div class="container-main">
+        <div class="rounded-2xl border border-brand p-8 text-center md:p-14">
+          <p class="eyebrow mb-4">Your project next?</p>
+
+          <h2 class="mx-auto max-w-2xl text-3xl font-bold tracking-tight sm:text-4xl">
+            Let's create something worth hearing.
+          </h2>
+
+          <p class="mx-auto mt-5 max-w-xl leading-7 text-muted">
+            Have a song, recording or creative project in mind?
+            Tell us what you want to bring to life.
+          </p>
+
+          <a href="contact.html" class="btn-primary mt-8">
+            Work with us ↗
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-brand py-8">
+    <div class="container-main flex flex-col justify-between gap-5 sm:flex-row sm:items-center">
+
+      <div>
+        <a href="index.html" aria-label="rocksKING Productions home">
+          <img
+            src="images/rocksking-logo.png"
+            alt="rocksKING Productions"
+            class="h-10 w-auto object-contain"
+          />
+        </a>
+
+        <p class="mt-2 text-xs text-muted">
+          Making your imagination loud.
+        </p>
+      </div>
+
+      <div class="flex flex-wrap gap-5 text-sm">
+        <a class="menu-link" href="https://instagram.com/rockskingprod" target="_blank" rel="noopener noreferrer">Instagram</a>
+        <a class="menu-link" href="https://youtube.com/@rockskingprod" target="_blank" rel="noopener noreferrer">YouTube</a>
+        <a class="menu-link" href="https://fb.com/rockskingprod" target="_blank" rel="noopener noreferrer">Facebook</a>
+        <a class="menu-link" href="https://open.spotify.com/artist/0Pr3HMYwLdZlSiU25V8GBn" target="_blank" rel="noopener noreferrer">Spotify</a>
+        <a class="menu-link" href="mailto:rockskingmediahub@gmail.com">Email</a>
+      </div>
+
+      <p class="text-xs text-muted">
+        © <span id="year"></span> rocksKING Productions
+      </p>
+
+    </div>
+  </footer>
+
+  <!-- JAVASCRIPT -->
+  <script>
+    const menuToggle = document.querySelector("#menu-toggle");
+    const mobileMenu = document.querySelector("#mobile-menu");
+
+    menuToggle.addEventListener("click", () => {
+      const isOpen = mobileMenu.classList.toggle("is-open");
+
+      menuToggle.setAttribute("aria-expanded", String(isOpen));
+      menuToggle.textContent = isOpen ? "Close" : "Menu";
+    });
+
+    mobileMenu.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+        mobileMenu.classList.remove("is-open");
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.textContent = "Menu";
+      });
+    });
+
+    document.querySelector("#year").textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>
