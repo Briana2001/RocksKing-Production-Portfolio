@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,13 +12,10 @@
 
   <title>rocksKING Productions | Making Your Imagination Loud</title>
 
-  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- Brand configuration: edit these values to change the theme -->
   <style>
     :root {
-      /* BRAND COLORS */
       --color-bg: #0B0B0D;
       --color-surface: #151518;
       --color-surface-light: #202024;
@@ -29,10 +25,7 @@
       --color-muted: #A4A4AD;
       --color-border: #303035;
 
-      /* TYPOGRAPHY */
       --font-body: Arial, Helvetica, sans-serif;
-
-      /* LAYOUT */
       --content-width: 1200px;
       --radius-card: 16px;
       --section-space: 100px;
@@ -124,8 +117,11 @@
 
     .hero-glow {
       background:
-        radial-gradient(ellipse at 70% 30%,
-          rgba(201, 164, 92, 0.15), transparent 48%),
+        radial-gradient(
+          ellipse at 70% 30%,
+          rgba(201, 164, 92, 0.15),
+          transparent 48%
+        ),
         linear-gradient(135deg, #17171B, #0B0B0D 70%);
     }
 
@@ -136,8 +132,11 @@
       border: 1px solid var(--color-border);
       border-radius: var(--radius-card);
       background:
-        radial-gradient(circle at 50% 45%,
-          rgba(201, 164, 92, 0.17), transparent 35%),
+        radial-gradient(
+          circle at 50% 45%,
+          rgba(201, 164, 92, 0.17),
+          transparent 35%
+        ),
         linear-gradient(145deg, #252329, #101013 65%);
     }
 
@@ -180,9 +179,23 @@
       display: grid;
       place-items: center;
       background:
-        radial-gradient(circle at 50% 50%,
-          rgba(201, 164, 92, 0.14), transparent 45%),
+        radial-gradient(
+          circle at 50% 50%,
+          rgba(201, 164, 92, 0.14),
+          transparent 45%
+        ),
         var(--color-surface-light);
+    }
+
+    .media-frame {
+      display: block;
+      width: 100%;
+      border: 0;
+      background: #0B0B0D;
+    }
+
+    .collaborator-list li::marker {
+      color: var(--color-accent);
     }
 
     .waveform {
@@ -247,7 +260,6 @@
     }
   </style>
 
-  <!-- Map the brand variables to Tailwind color utilities -->
   <script>
     tailwind.config = {
       theme: {
@@ -270,26 +282,25 @@
 <body>
 
   <!-- HEADER -->
-    <header class="sticky top-0 z-50 border-b border-brand bg-brand-bg/95 backdrop-blur">
+  <header class="sticky top-0 z-50 border-b border-brand bg-brand-bg/95 backdrop-blur">
     <nav
       class="container-main flex min-h-[76px] items-center justify-between gap-6"
       aria-label="Main navigation"
     >
-      
-     <a href="index.html"
-   class="shrink-0 leading-tight"
-   aria-label="rocksKING Productions home">
-
-  <img
-    src="images/rocksking-logo.png"
-    alt="rocksKING Productions"
-    class="h-12 w-auto object-contain"
-  />
-
-</a>
+      <a
+        href="index.html"
+        class="shrink-0 leading-tight"
+        aria-label="rocksKING Productions home"
+      >
+        <img
+          src="images/rocksking-logo.png"
+          alt="rocksKING Productions"
+          class="h-12 w-auto object-contain"
+        />
+      </a>
 
       <div class="hidden items-center gap-7 md:flex">
-        <a href="index.html" class="menu-link text-sm font-semibold text-accent aria-current="page">Home</a>
+        <a href="index.html" class="menu-link text-sm font-semibold text-accent" aria-current="page">Home</a>
         <a href="services.html" class="menu-link text-sm">Services</a>
         <a href="portfolio.html" class="menu-link text-sm">Our Work</a>
         <a href="academy.html" class="menu-link text-sm">Academy</a>
@@ -308,8 +319,10 @@
       </button>
     </nav>
 
-    <div id="mobile-menu"
-         class="mobile-menu container-main flex-col gap-5 pb-6 md:hidden">
+    <div
+      id="mobile-menu"
+      class="mobile-menu container-main flex-col gap-5 pb-6 md:hidden"
+    >
       <a href="index.html" class="text-accent">Home</a>
       <a href="services.html" class="menu-link">Services</a>
       <a href="portfolio.html" class="menu-link">Our Work</a>
@@ -318,12 +331,12 @@
       <a href="contact.html" class="menu-link">Contact</a>
     </div>
   </header>
+
   <main>
 
     <!-- HERO -->
     <section id="home" class="hero-glow">
       <div class="container-main grid items-center gap-12 py-20 md:grid-cols-2 md:py-28">
-
         <div>
           <p class="eyebrow mb-6">Music · Media · Creative Expression</p>
 
@@ -348,170 +361,245 @@
           </p>
         </div>
 
-        <!-- Temporary visual until the studio photos arrive -->
-        <div class="hero-art flex items-center justify-center" aria-label="Decorative audio waveform artwork">
-          <div class="relative z-10 px-5 text-center">
-            <div class="waveform" aria-hidden="true">
-              <span></span><span></span><span></span><span></span>
-              <span></span><span></span><span></span><span></span>
-              <span></span><span></span><span></span><span></span>
-              <span></span><span></span><span></span><span></span>
-              <span></span><span></span><span></span><span></span>
-              <span></span><span></span><span></span><span></span>
-              <span></span><span></span><span></span><span></span>
-              <span></span><span></span><span></span><span></span>
+        <!-- Real studio/creative visual: supplied Instagram reel -->
+        <div class="overflow-hidden rounded-2xl border border-brand bg-brand-surface">
+          <div class="flex items-center justify-between gap-4 border-b border-brand px-5 py-4">
+            <div>
+              <p class="eyebrow">Inside rocksKING</p>
+              <p class="mt-1 text-sm text-muted">Studio moments & creative work</p>
             </div>
+            <span class="text-2xl text-accent" aria-hidden="true">▷</span>
+          </div>
 
-            <p class="mt-5 text-xs font-bold tracking-[0.3em] text-accent">
-              YOUR SOUND. YOUR VISION.
+          <iframe
+            class="media-frame"
+            src="https://www.instagram.com/reel/DWPCkuxswt0/embed"
+            title="rocksKING Productions studio and creative reel"
+            height="440"
+            loading="lazy"
+            allowfullscreen
+            referrerpolicy="strict-origin-when-cross-origin"
+          ></iframe>
+
+          <div class="p-5">
+            <p class="text-sm leading-6 text-muted">
+              A look into the studio and its creative work.
             </p>
-            <p class="mt-2 text-sm text-muted">
-              Studio visuals coming soon
-            </p>
+            <div class="mt-4 flex flex-wrap gap-4">
+              <a
+                class="menu-link text-sm font-semibold"
+                href="https://www.instagram.com/reel/DWPCkuxswt0/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >Watch on Instagram ↗</a>
+              <a
+                class="menu-link text-sm font-semibold"
+                href="https://sites.google.com/view/rockskingprod"
+                target="_blank"
+                rel="noopener noreferrer"
+              >Explore the studio ↗</a>
+            </div>
           </div>
         </div>
-
       </div>
     </section>
-
-    <!-- SERVICES -->
+        <!-- SERVICES PREVIEW -->
     <section id="services" class="py-20 md:py-24">
       <div class="container-main">
-
-        <div class="mb-10 max-w-2xl">
+        <div class="max-w-2xl">
           <p class="eyebrow mb-4">What we do</p>
           <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">
-            From the first idea to the final sound.
+            Sound, visuals, and everything in between.
           </h2>
-          <p class="mt-4 leading-7 text-muted">
-            Explore our audio and visual services, built to bring creative
-            projects to life.
+          <p class="mt-5 leading-7 text-muted">
+            From the first idea to the final release, we help bring creative
+            projects to life through music and media services.
           </p>
         </div>
 
-        <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <div class="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
 
           <article class="service-card p-6">
-            <span class="text-2xl text-accent" aria-hidden="true">♫</span>
-            <h3 class="mt-5 text-lg font-bold">Music Production</h3>
+            <span class="text-3xl text-accent" aria-hidden="true">♫</span>
+            <h3 class="mt-5 text-xl font-bold">Music Production</h3>
             <p class="mt-3 text-sm leading-6 text-muted">
-              Instrumentals, recording, songwriting sessions and creative development.
+              Turn your musical ideas into a complete production with a sound
+              that fits your vision.
             </p>
-            <a class="menu-link mt-6 inline-block text-sm" href="#contact">
-              Discuss a project ↗
-            </a>
           </article>
 
           <article class="service-card p-6">
-            <span class="text-2xl text-accent" aria-hidden="true">◉</span>
-            <h3 class="mt-5 text-lg font-bold">Mixing & Mastering</h3>
+            <span class="text-3xl text-accent" aria-hidden="true">◉</span>
+            <h3 class="mt-5 text-xl font-bold">Mixing & Mastering</h3>
             <p class="mt-3 text-sm leading-6 text-muted">
-              Refine your recordings with a balanced, polished final sound.
+              Refine your recordings with balanced mixes and polished,
+              release-ready sound.
             </p>
-            <a class="menu-link mt-6 inline-block text-sm" href="#contact">
-              Discuss a project ↗
-            </a>
           </article>
 
           <article class="service-card p-6">
-            <span class="text-2xl text-accent" aria-hidden="true">▷</span>
-            <h3 class="mt-5 text-lg font-bold">Video Production</h3>
+            <span class="text-3xl text-accent" aria-hidden="true">▹</span>
+            <h3 class="mt-5 text-xl font-bold">Video Production</h3>
             <p class="mt-3 text-sm leading-6 text-muted">
-              Videography, music videos and video editing for your creative vision.
+              Create visual content that communicates your message and
+              complements your sound.
             </p>
-            <a class="menu-link mt-6 inline-block text-sm" href="#contact">
-              Discuss a project ↗
-            </a>
           </article>
 
           <article class="service-card p-6">
-            <span class="text-2xl text-accent" aria-hidden="true">⌘</span>
-            <h3 class="mt-5 text-lg font-bold">Music Academy</h3>
+            <span class="text-3xl text-accent" aria-hidden="true">✂</span>
+            <h3 class="mt-5 text-xl font-bold">Video Editing</h3>
             <p class="mt-3 text-sm leading-6 text-muted">
-              Learn music production through flexible, practical training.
+              Shape raw footage into engaging, well-paced videos for your
+              creative projects and platforms.
             </p>
-            <a class="menu-link mt-6 inline-block text-sm" href="#academy">
-              Explore the Academy ↗
-            </a>
+          </article>
+
+          <article class="service-card p-6">
+            <span class="text-3xl text-accent" aria-hidden="true">↗</span>
+            <h3 class="mt-5 text-xl font-bold">Music Distribution</h3>
+            <p class="mt-3 text-sm leading-6 text-muted">
+              Get support with preparing and distributing music for digital
+              listening platforms.
+            </p>
+          </article>
+
+          <article class="service-card p-6">
+            <span class="text-3xl text-accent" aria-hidden="true">⌘</span>
+            <h3 class="mt-5 text-xl font-bold">Music Academy</h3>
+            <p class="mt-3 text-sm leading-6 text-muted">
+              Develop your music production knowledge through the rocksKING
+              Music & Media Academy.
+            </p>
           </article>
 
         </div>
+
+        <a class="btn-secondary mt-8" href="services.html">
+          Explore all services ↗
+        </a>
       </div>
     </section>
 
     <!-- FEATURED WORK -->
-    <section id="work" class="border-y border-brand bg-brand-surface py-20 md:py-24">
+    <section id="work" class="border-y border-brand py-20 md:py-24">
       <div class="container-main">
 
-        <div class="flex flex-wrap items-end justify-between gap-5">
+        <div class="flex flex-col justify-between gap-5 md:flex-row md:items-end">
           <div>
             <p class="eyebrow mb-4">Selected work</p>
             <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">
               Hear it. See it. Feel it.
             </h2>
             <p class="mt-4 max-w-xl leading-7 text-muted">
-              A showcase of music, collaborations and visual projects from
-              rocksKING Productions.
+              Explore music released through the studio, a featured visual,
+              and artists whose work appears in the rocksKING Studio playlist.
             </p>
           </div>
-          <span class="text-sm text-muted">Portfolio preview</span>
+
+          <a
+            class="menu-link text-sm font-semibold"
+            href="portfolio.html"
+          >Explore the full portfolio ↗</a>
         </div>
 
-        <div class="mt-10 grid gap-5 md:grid-cols-3">
+        <div class="mt-10 grid items-start gap-5 md:grid-cols-3">
 
+          <!-- FEATURED MUSIC -->
           <article class="work-card">
-            <div class="work-art">
-              <div class="text-center">
-                <div class="waveform" aria-hidden="true">
-                  <span></span><span></span><span></span><span></span>
-                  <span></span><span></span><span></span><span></span>
-                  <span></span><span></span><span></span><span></span>
-                  <span></span><span></span><span></span><span></span>
-                </div>
-                <p class="text-xs tracking-widest text-accent">AUDIO</p>
-              </div>
-            </div>
             <div class="p-5">
               <p class="text-xs uppercase tracking-widest text-accent">Music</p>
               <h3 class="mt-2 text-lg font-bold">Featured productions</h3>
               <p class="mt-2 text-sm leading-6 text-muted">
-                Released tracks and instrumentals will be featured here.
+                Listen to selected tracks and releases from the rocksKING
+                Studio playlist.
               </p>
-              <!-- Add a Spotify embed or beat preview when links arrive -->
+            </div>
+
+            <iframe
+              class="media-frame"
+              src="https://open.spotify.com/embed/playlist/6aDRsVNRDtjHYt2muBMaMd?utm_source=generator"
+              title="rocksKING Studio featured music playlist on Spotify"
+              height="352"
+              loading="lazy"
+              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+              referrerpolicy="strict-origin-when-cross-origin"
+            ></iframe>
+
+            <div class="p-5 pt-4">
+              <a
+                class="menu-link text-sm font-semibold"
+                href="https://open.spotify.com/playlist/6aDRsVNRDtjHYt2muBMaMd"
+                target="_blank"
+                rel="noopener noreferrer"
+              >Open playlist on Spotify ↗</a>
             </div>
           </article>
 
+          <!-- VISUAL STORYTELLING -->
           <article class="work-card">
             <div class="work-art">
-              <div class="text-center">
+              <div class="px-5 py-8 text-center">
                 <span class="text-5xl text-accent" aria-hidden="true">▷</span>
-                <p class="mt-4 text-xs tracking-widest text-accent">VISUALS</p>
+                <p class="mt-4 text-xs tracking-widest text-accent">
+                  VISUAL STORYTELLING
+                </p>
+                <p class="mt-3 text-sm leading-6 text-muted">
+                  A featured rocksKING Productions reel
+                </p>
               </div>
             </div>
+
             <div class="p-5">
               <p class="text-xs uppercase tracking-widest text-accent">Video</p>
               <h3 class="mt-2 text-lg font-bold">Visual storytelling</h3>
               <p class="mt-2 text-sm leading-6 text-muted">
-                Music videos, showreels and editing projects will go here.
+                Watch the studio's featured Instagram reel. More video
+                projects can be added as approved links are supplied.
               </p>
-              <!-- Add YouTube video embeds when links arrive -->
+
+              <a
+                class="btn-secondary mt-5 w-full"
+                href="https://www.instagram.com/reel/DWPCkuxswt0/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >Watch the reel ↗</a>
             </div>
           </article>
 
+          <!-- ARTISTS AND COLLABORATIONS -->
           <article class="work-card">
             <div class="work-art">
-              <div class="text-center">
+              <div class="px-5 py-8 text-center">
                 <span class="text-5xl font-black text-accent" aria-hidden="true">RK</span>
-                <p class="mt-4 text-xs tracking-widest text-accent">COLLABORATIONS</p>
+                <p class="mt-4 text-xs tracking-widest text-accent">
+                  ARTISTS & COLLABORATIONS
+                </p>
               </div>
             </div>
+
             <div class="p-5">
               <p class="text-xs uppercase tracking-widest text-accent">People</p>
               <h3 class="mt-2 text-lg font-bold">Artists & collaborations</h3>
               <p class="mt-2 text-sm leading-6 text-muted">
-                Meet the artists and creative partners behind the work.
+                Selected artists and tracks featured in the public rocksKING
+                Studio playlist include:
               </p>
-              <!-- Add approved artist profiles and project links here -->
+
+              <ul class="collaborator-list mt-4 list-disc space-y-2 pl-5 text-sm leading-6 text-muted">
+                <li><span class="font-medium text-white">Miki Pop</span> — “Why”</li>
+                <li><span class="font-medium text-white">Omoso Jayk2</span> — “Poverty Japa” with Kissomoti</li>
+                <li><span class="font-medium text-white">Dennis Dondu</span> — “I Cry for Souls”</li>
+                <li><span class="font-medium text-white">Victor Makolo</span> — “Ko Ina”</li>
+                <li><span class="font-medium text-white">Jentukid</span> — “Black Lightening”</li>
+              </ul>
+
+              <a
+                class="menu-link mt-5 inline-block text-sm font-semibold"
+                href="https://www.reverbnation.com/rocksking/playlist/-4"
+                target="_blank"
+                rel="noopener noreferrer"
+              >Explore the studio playlist ↗</a>
             </div>
           </article>
 
@@ -542,33 +630,77 @@
             <p class="text-sm text-muted">Academy programme</p>
             <p class="mt-2 text-3xl font-bold">Music Production</p>
             <div class="my-5 h-px bg-brand"></div>
-            <p class="text-sm leading-7 text-muted">
-              Course details, schedule, venue and fees will be published
-              here after the current information is confirmed.
+
+            <dl class="space-y-3 text-sm leading-6">
+              <div class="flex justify-between gap-4">
+                <dt class="text-muted">Duration</dt>
+                <dd class="text-right font-semibold">10 weeks</dd>
+              </div>
+              <div class="flex justify-between gap-4">
+                <dt class="text-muted">Schedule</dt>
+                <dd class="text-right font-semibold">3 sessions/week · 2 hours each</dd>
+              </div>
+              <div class="flex justify-between gap-4">
+                <dt class="text-muted">Session time</dt>
+                <dd class="text-right font-semibold">10 AM–12 noon</dd>
+              </div>
+              <div class="flex justify-between gap-4">
+                <dt class="text-muted">Standard programme</dt>
+                <dd class="text-right font-semibold">USD $150</dd>
+              </div>
+              <div class="flex justify-between gap-4">
+                <dt class="text-muted">Exclusive programme</dt>
+                <dd class="text-right font-semibold">USD $300</dd>
+              </div>
+            </dl>
+
+            <p class="mt-4 text-xs leading-5 text-muted">
+              Training takes place at rocksKING Studio. Confirm current
+              availability and programme details with the Academy.
             </p>
+
+            <a
+              class="menu-link mt-4 inline-block text-sm font-semibold"
+              href="https://sites.google.com/view/rockskingprod/acedemy-of-media-music"
+              target="_blank"
+              rel="noopener noreferrer"
+            >View Academy details ↗</a>
           </div>
 
         </div>
       </div>
     </section>
-
-    <!-- CONTACT -->
+        <!-- CONTACT -->
     <section id="contact" class="border-t border-brand py-20 md:py-24">
       <div class="container-main text-center">
         <p class="eyebrow mb-4">Have a project in mind?</p>
+
         <h2 class="mx-auto max-w-3xl text-4xl font-bold tracking-tight sm:text-5xl">
           Let's make something worth hearing.
         </h2>
+
         <p class="mx-auto mt-5 max-w-xl leading-7 text-muted">
           Tell us what you're working on and let's discuss how rocksKING
           Productions can help bring your idea to life.
         </p>
 
         <div class="mt-8 flex flex-wrap justify-center gap-3">
-          <!-- Replace with the tutor's real WhatsApp link -->
-          <a class="btn-primary" href="mailto:rockskingmediahub@gmail.com">
+          <a
+            class="btn-primary"
+            href="https://wa.me/2348130421230"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            WhatsApp the studio ↗
+          </a>
+
+          <a
+            class="btn-secondary"
+            href="mailto:rockskingmediahub@gmail.com"
+          >
             Email the studio ↗
           </a>
+
           <a
             class="btn-secondary"
             href="https://instagram.com/rockskingprod"
@@ -580,7 +712,7 @@
         </div>
 
         <p class="mt-5 text-xs text-muted">
-          WhatsApp booking link will be added once the contact number is confirmed.
+          Prefer email? Reach the studio at rockskingmediahub@gmail.com.
         </p>
       </div>
     </section>
@@ -590,29 +722,47 @@
   <!-- FOOTER -->
   <footer class="border-t border-brand py-8">
     <div class="container-main flex flex-col justify-between gap-4 sm:flex-row sm:items-center">
+
       <div>
         <p class="font-bold">
           rocks<span class="text-accent">KING</span> Productions
         </p>
-        <p class="mt-1 text-xs text-muted">Making your imagination loud.</p>
+        <p class="mt-1 text-xs text-muted">
+          Making your imagination loud.
+        </p>
       </div>
 
       <div class="flex flex-wrap gap-5 text-sm">
-        <a class="menu-link" href="https://youtube.com/@rockskingprod"
-           target="_blank" rel="noopener noreferrer">YouTube</a>
-        <a class="menu-link" href="https://instagram.com/rockskingprod"
-           target="_blank" rel="noopener noreferrer">Instagram</a>
-        <a class="menu-link" href="https://fb.com/rockskingprod"
-           target="_blank" rel="noopener noreferrer">Facebook</a>
+        <a
+          class="menu-link"
+          href="https://youtube.com/@rockskingprod"
+          target="_blank"
+          rel="noopener noreferrer"
+        >YouTube</a>
+
+        <a
+          class="menu-link"
+          href="https://instagram.com/rockskingprod"
+          target="_blank"
+          rel="noopener noreferrer"
+        >Instagram</a>
+
+        <a
+          class="menu-link"
+          href="https://fb.com/rockskingprod"
+          target="_blank"
+          rel="noopener noreferrer"
+        >Facebook</a>
       </div>
 
       <p class="text-xs text-muted">
         © <span id="year"></span> rocksKING Productions
       </p>
+
     </div>
   </footer>
 
-  <!-- Minimal JavaScript: mobile menu and current year -->
+  <!-- MOBILE MENU AND CURRENT YEAR -->
   <script>
     const menuToggle = document.querySelector("#menu-toggle");
     const mobileMenu = document.querySelector("#mobile-menu");

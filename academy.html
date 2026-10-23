@@ -1,17 +1,12 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#0B0B0D">
+  <meta name="description" content="Explore music production training, course fees, schedules and the rocksKING Music & Media Academy community.">
 
   <title>Music & Media Academy | rocksKING Productions</title>
-
-  <meta
-    name="description"
-    content="Explore music production training at rocksKING Music & Media Academy."
-  >
 
   <link rel="icon" type="image/png" href="images/rocksking-logo.png">
   <script src="https://cdn.tailwindcss.com"></script>
@@ -27,9 +22,7 @@
       --border: #303035;
     }
 
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
     html {
       scroll-behavior: smooth;
@@ -43,37 +36,29 @@
       font-family: Arial, Helvetica, sans-serif;
     }
 
-    a {
-      text-decoration: none;
-    }
+    a { text-decoration: none; }
 
     .container-main {
       width: min(100% - 40px, 1200px);
       margin-inline: auto;
     }
 
-    .text-muted {
-      color: var(--muted);
-    }
-
-    .text-gold {
-      color: var(--gold);
-    }
-
-    .border-brand {
-      border-color: var(--border);
-    }
+    .text-muted { color: var(--muted); }
+    .text-gold { color: var(--gold); }
+    .border-brand { border-color: var(--border); }
 
     .menu-link {
       color: var(--muted);
       transition: color .2s ease;
     }
 
-    .menu-link:hover {
+    .menu-link:hover,
+    .menu-link:focus-visible {
       color: var(--gold);
     }
 
-    .btn-primary {
+    .btn-primary,
+    .btn-secondary {
       display: inline-flex;
       align-items: center;
       justify-content: center;
@@ -81,10 +66,13 @@
       padding: 13px 20px;
       border: 1px solid var(--gold);
       border-radius: 6px;
-      background: var(--gold);
-      color: #0B0B0D;
       font-weight: 700;
       transition: .2s ease;
+    }
+
+    .btn-primary {
+      background: var(--gold);
+      color: #0B0B0D;
     }
 
     .btn-primary:hover {
@@ -93,14 +81,8 @@
     }
 
     .btn-secondary {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 13px 20px;
-      border: 1px solid var(--border);
-      border-radius: 6px;
+      border-color: var(--border);
       color: var(--text);
-      transition: .2s ease;
     }
 
     .btn-secondary:hover {
@@ -110,11 +92,7 @@
 
     .hero {
       background:
-        radial-gradient(
-          ellipse at 80% 20%,
-          rgba(201,164,92,.15),
-          transparent 45%
-        ),
+        radial-gradient(ellipse at 80% 20%, rgba(201,164,92,.15), transparent 45%),
         linear-gradient(135deg, #171719, #0B0B0D 75%);
     }
 
@@ -126,7 +104,8 @@
       text-transform: uppercase;
     }
 
-    .panel {
+    .panel,
+    .fee-card {
       background: var(--surface);
       border: 1px solid var(--border);
       border-radius: 14px;
@@ -146,6 +125,7 @@
     }
 
     .student-portrait {
+      position: relative;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -162,9 +142,15 @@
     }
 
     .student-portrait img {
+      position: absolute;
+      inset: 0;
       width: 100%;
       height: 100%;
       object-fit: cover;
+    }
+
+    .student-fallback {
+      display: none;
     }
 
     .detail-number {
@@ -173,27 +159,17 @@
       font-weight: 800;
     }
 
-    .mobile-menu {
-      display: none;
-    }
-
-    .mobile-menu.is-open {
-      display: flex;
-    }
+    .mobile-menu { display: none; }
+    .mobile-menu.is-open { display: flex; }
 
     .fee-card {
       display: flex;
       flex-direction: column;
       height: 100%;
       padding: 25px;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 14px;
     }
 
-    .fee-card.featured {
-      border-color: var(--gold);
-    }
+    .fee-card.featured { border-color: var(--gold); }
 
     .section-rule {
       height: 1px;
@@ -207,9 +183,7 @@
     }
 
     @media (prefers-reduced-motion: reduce) {
-      html {
-        scroll-behavior: auto;
-      }
+      html { scroll-behavior: auto; }
 
       *,
       *::before,
@@ -224,50 +198,40 @@
 
   <!-- NAVIGATION -->
   <header class="sticky top-0 z-50 border-b border-brand bg-[#0B0B0D]/95 backdrop-blur">
-    <nav
-      class="container-main flex min-h-[76px] items-center justify-between gap-6"
-      aria-label="Main navigation"
-    >
+    <nav class="container-main flex min-h-[76px] items-center justify-between gap-6"
+         aria-label="Main navigation">
+
       <a href="index.html" aria-label="rocksKING Productions home">
-        <img
-          src="images/rocksking-logo.png"
-          alt="rocksKING Productions"
-          class="h-12 w-auto object-contain"
-        >
+        <img src="images/rocksking-logo.png"
+             alt="rocksKING Productions"
+             class="h-12 w-auto object-contain">
       </a>
 
       <div class="hidden items-center gap-7 md:flex">
         <a href="index.html" class="menu-link text-sm">Home</a>
         <a href="services.html" class="menu-link text-sm">Services</a>
         <a href="portfolio.html" class="menu-link text-sm">Our Work</a>
-        <a
-          href="academy.html"
-          class="text-sm font-semibold text-gold"
-          aria-current="page"
-        >Academy</a>
+        <a href="academy.html" class="text-sm font-semibold text-gold"
+           aria-current="page">Academy</a>
         <a href="about.html" class="menu-link text-sm">About</a>
         <a href="contact.html" class="btn-primary text-sm">Let's Talk ↗</a>
       </div>
 
-      <button
-        id="menu-toggle"
-        class="rounded border border-brand px-3 py-2 text-sm md:hidden"
-        type="button"
-        aria-controls="mobile-menu"
-        aria-expanded="false"
-      >
+      <button id="menu-toggle"
+              class="rounded border border-brand px-3 py-2 text-sm md:hidden"
+              type="button"
+              aria-controls="mobile-menu"
+              aria-expanded="false">
         Menu
       </button>
     </nav>
 
-    <div
-      id="mobile-menu"
-      class="mobile-menu container-main flex-col gap-5 pb-6 md:hidden"
-    >
+    <div id="mobile-menu"
+         class="mobile-menu container-main flex-col gap-5 pb-6 md:hidden">
       <a href="index.html" class="menu-link">Home</a>
       <a href="services.html" class="menu-link">Services</a>
       <a href="portfolio.html" class="menu-link">Our Work</a>
-      <a href="academy.html" class="text-gold">Academy</a>
+      <a href="academy.html" class="text-gold" aria-current="page">Academy</a>
       <a href="about.html" class="menu-link">About</a>
       <a href="contact.html" class="menu-link">Contact</a>
     </div>
@@ -287,7 +251,7 @@
         </h1>
 
         <p class="mt-6 max-w-2xl text-base leading-8 text-muted md:text-lg">
-          A practical music production program designed to help aspiring
+          A practical music production programme designed to help aspiring
           creatives develop their skills through focused learning and studio
           sessions.
         </p>
@@ -300,7 +264,7 @@
         <div class="mt-12 grid grid-cols-1 gap-4 sm:grid-cols-3">
           <div class="rounded-lg border border-brand bg-black/20 p-5">
             <p class="detail-number">10 Weeks</p>
-            <p class="mt-2 text-sm text-muted">Program duration</p>
+            <p class="mt-2 text-sm text-muted">Programme duration</p>
           </div>
 
           <div class="rounded-lg border border-brand bg-black/20 p-5">
@@ -336,7 +300,7 @@
           </p>
 
           <p class="mt-4 leading-8 text-muted">
-            The program assumes students already have fundamental music and
+            The programme assumes students already have fundamental music and
             computing skills. Where extra instruction is needed, it may use
             part of the scheduled session.
           </p>
@@ -373,7 +337,7 @@
             <div class="flex gap-4">
               <span class="text-gold">03</span>
               <div>
-                <h3 class="font-bold">Studio-based location</h3>
+                <h3 class="font-bold">Studio-based learning</h3>
                 <p class="mt-1 text-sm leading-6 text-muted">
                   Sessions take place at rocksKING Studio.
                 </p>
@@ -391,81 +355,107 @@
 
         <div class="mb-10 max-w-2xl">
           <p class="eyebrow mb-4">Our community</p>
-
           <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">
             Our Students & Alumni
           </h2>
-
           <p class="mt-4 leading-7 text-muted">
             Meet some of the people who have been part of the rocksKING
             Music & Media Academy learning journey.
           </p>
         </div>
 
-        <!--
-          TEMPORARY IMAGE PLACEHOLDERS
-
-          When you obtain a student's image URL, replace the initials inside
-          the student-portrait element with an img element.
-
-          Example:
-          <div class="student-portrait">
-            <img src="PASTE-IMAGE-URL-HERE" alt="Student name">
-          </div>
-
-          Only use images you have permission to publish.
-        -->
+        <p class="mb-6 text-sm leading-6 text-muted">
+          Student and alumni portraits are being added. Each portrait uses
+          a dedicated image file so the correct photo can be matched to
+          the correct person.
+        </p>
 
         <div class="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
 
-          <!-- STUDENT 1 -->
+          <!-- MIKI POP -->
           <article class="student-card">
-            <div class="student-portrait" aria-hidden="true">MP</div>
+            <div class="student-portrait">
+              <span class="student-fallback">MP</span>
+              <img src="images/students/miki-pop.jpg"
+                   alt="Miki Pop, rocksKING Music & Media Academy alumnus"
+                   loading="lazy"
+                   onerror="this.remove(); this.parentElement.querySelector('.student-fallback').style.display='block';">
+            </div>
             <div class="p-5">
               <h3 class="text-lg font-bold">Miki Pop</h3>
               <p class="mt-2 text-sm text-gold">Alumnus · 2020</p>
             </div>
           </article>
 
-          <!-- STUDENT 2 -->
+          <!-- DJ SMITH -->
           <article class="student-card">
-            <div class="student-portrait" aria-hidden="true">DS</div>
+            <div class="student-portrait">
+              <span class="student-fallback">DS</span>
+              <img src="images/students/dj-smith.jpg"
+                   alt="DJ Smith, rocksKING Music & Media Academy student"
+                   loading="lazy"
+                   onerror="this.remove(); this.parentElement.querySelector('.student-fallback').style.display='block';">
+            </div>
             <div class="p-5">
               <h3 class="text-lg font-bold">DJ Smith</h3>
               <p class="mt-2 text-sm text-gold">Student</p>
             </div>
           </article>
 
-          <!-- STUDENT 3 -->
+          <!-- KECYJOE MIX -->
           <article class="student-card">
-            <div class="student-portrait" aria-hidden="true">KM</div>
+            <div class="student-portrait">
+              <span class="student-fallback">KM</span>
+              <img src="images/students/kecyjoe-mix.jpg"
+                   alt="Kecyjoe Mix, rocksKING Music & Media Academy alumnus"
+                   loading="lazy"
+                   onerror="this.remove(); this.parentElement.querySelector('.student-fallback').style.display='block';">
+            </div>
             <div class="p-5">
               <h3 class="text-lg font-bold">Kecyjoe Mix</h3>
               <p class="mt-2 text-sm text-gold">Alumnus</p>
             </div>
           </article>
 
-          <!-- STUDENT 4 -->
+          <!-- JOSHUA WINTER -->
           <article class="student-card">
-            <div class="student-portrait" aria-hidden="true">JW</div>
+            <div class="student-portrait">
+              <span class="student-fallback">JW</span>
+              <img src="images/students/joshua-winter.jpg"
+                   alt="Joshua Winter, rocksKING Music & Media Academy student"
+                   loading="lazy"
+                   onerror="this.remove(); this.parentElement.querySelector('.student-fallback').style.display='block';">
+            </div>
             <div class="p-5">
               <h3 class="text-lg font-bold">Joshua Winter</h3>
               <p class="mt-2 text-sm text-gold">Student</p>
             </div>
           </article>
 
-          <!-- STUDENT 5 -->
+          <!-- BRIANA KAMSI -->
           <article class="student-card">
-            <div class="student-portrait" aria-hidden="true">B</div>
+            <div class="student-portrait">
+              <span class="student-fallback">BK</span>
+              <img src="images/students/briana-kamsi.jpg"
+                   alt="Briana Kamsi, rocksKING Music & Media Academy student"
+                   loading="lazy"
+                   onerror="this.remove(); this.parentElement.querySelector('.student-fallback').style.display='block';">
+            </div>
             <div class="p-5">
-              <h3 class="text-lg font-bold">Briana</h3>
+              <h3 class="text-lg font-bold">Briana Kamsi</h3>
               <p class="mt-2 text-sm text-gold">Student</p>
             </div>
           </article>
 
-          <!-- STUDENT 6 -->
+          <!-- PREESCA -->
           <article class="student-card">
-            <div class="student-portrait" aria-hidden="true">P</div>
+            <div class="student-portrait">
+              <span class="student-fallback">P</span>
+              <img src="images/students/preesca.jpg"
+                   alt="Preesca, rocksKING Music & Media Academy alumnus"
+                   loading="lazy"
+                   onerror="this.remove(); this.parentElement.querySelector('.student-fallback').style.display='block';">
+            </div>
             <div class="p-5">
               <h3 class="text-lg font-bold">Preesca</h3>
               <p class="mt-2 text-sm text-gold">RMMA Alumnus</p>
@@ -474,24 +464,18 @@
 
         </div>
 
-        <p class="mt-6 text-sm leading-6 text-muted">
-          Student photographs are unavailable at the moment.
-        </p>
-
       </div>
     </section>
 
-    <!-- COURSE OUTLINE -->
+        <!-- COURSE OUTLINE -->
     <section id="course" class="py-16 md:py-24">
       <div class="container-main">
 
         <div class="mb-10 max-w-2xl">
-          <p class="eyebrow mb-4">The program</p>
-
+          <p class="eyebrow mb-4">The programme</p>
           <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">
             Music Production
           </h2>
-
           <p class="mt-4 leading-7 text-muted">
             Explore the course structure and choose the topics you want to
             focus on. Use the academic calendar to see when each topic is taught.
@@ -504,9 +488,8 @@
               <p class="eyebrow mb-2">Course outline</p>
               <h3 class="text-xl font-bold">Your learning, your focus.</h3>
               <p class="mt-2 max-w-xl text-sm leading-6 text-muted">
-                The academy's topic schedule is maintained separately.
-                Open the official page to review the current course outline
-                and available topics.
+                Review the official course outline and available topics
+                through the Academy's published page.
               </p>
             </div>
 
@@ -515,9 +498,7 @@
               target="_blank"
               rel="noopener noreferrer"
               class="btn-primary shrink-0"
-            >
-              View course outline ↗
-            </a>
+            >View course outline ↗</a>
           </div>
         </div>
 
@@ -541,14 +522,13 @@
             <p class="eyebrow mb-4">Duration</p>
             <h3 class="text-2xl font-bold">10 Weeks</h3>
             <p class="mt-3 leading-7 text-muted">
-              The program runs three times a week, with three sessions
-              scheduled each week.
+              Three sessions per week throughout the programme.
             </p>
           </article>
 
           <article class="panel p-6">
             <p class="eyebrow mb-4">Session time</p>
-            <h3 class="text-2xl font-bold">10 AM – 12 Noon</h3>
+            <h3 class="text-2xl font-bold">10 AM–12 Noon</h3>
             <p class="mt-3 leading-7 text-muted">
               Each session lasts two hours.
             </p>
@@ -558,21 +538,17 @@
             <p class="eyebrow mb-4">Venue</p>
             <h3 class="text-2xl font-bold">rocksKING Studio</h3>
             <p class="mt-3 leading-7 text-muted">
-              Visit the studio at the location shared by the academy.
+              Find the studio using the location link provided by the Academy.
             </p>
-
             <a
               class="menu-link mt-4 inline-flex text-sm font-semibold"
               href="https://maps.app.goo.gl/XC81TNEo7gkLFEPb9"
               target="_blank"
               rel="noopener noreferrer"
-            >
-              Get directions ↗
-            </a>
+            >Get directions ↗</a>
           </article>
 
         </div>
-
       </div>
     </section>
 
@@ -582,23 +558,21 @@
 
         <div class="panel p-6 md:p-10">
           <p class="eyebrow mb-4">Dates & planning</p>
-
           <h2 class="text-3xl font-bold sm:text-4xl">
             Academic Calendar
           </h2>
 
           <p class="mt-4 max-w-2xl leading-7 text-muted">
-            Check the academy's schedule to see the topics and their dates.
+            Check the Academy's schedule to see the topics and their dates.
             Since students can choose specific topics, review the calendar
             before deciding which sessions to attend.
           </p>
 
           <div class="mt-7 rounded-lg border border-brand bg-black/20 p-5">
             <h3 class="font-bold">Need a makeup class?</h3>
-
             <p class="mt-2 leading-7 text-muted">
               If you miss a class or topic, arrange a makeup session with
-              the instructor. A little extra cost may apply, and only one
+              the instructor. An additional cost may apply, and only one
               makeup class is permitted per week.
             </p>
           </div>
@@ -608,17 +582,9 @@
             target="_blank"
             rel="noopener noreferrer"
             class="btn-primary mt-7"
-          >
-            View official schedule ↗
-          </a>
-
-          <!--
-            Replace the link above with the direct academic-calendar URL
-            when the instructor provides it.
-          -->
+          >View official schedule ↗</a>
 
         </div>
-
       </div>
     </section>
 
@@ -628,14 +594,12 @@
 
         <div class="mb-10 max-w-2xl">
           <p class="eyebrow mb-4">Investment</p>
-
           <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">
             Course Fees
           </h2>
-
           <p class="mt-4 leading-7 text-muted">
-            Choose the program option that suits you. Confirm the current
-            availability and payment arrangements with the academy.
+            Choose the programme option that suits you. Confirm current
+            availability and payment arrangements with the Academy.
           </p>
         </div>
 
@@ -644,76 +608,67 @@
           <!-- STANDARD -->
           <article class="fee-card">
             <p class="eyebrow">Standard</p>
-
-            <h3 class="mt-4 text-3xl font-bold">
-              $150
-            </h3>
-
+            <h3 class="mt-4 text-3xl font-bold">USD $150</h3>
             <p class="mt-3 leading-7 text-muted">
-              The standard program option.
+              The Standard programme option.
             </p>
 
             <div class="section-rule my-6"></div>
 
             <p class="text-sm text-muted">Pay as you go</p>
-
             <p class="mt-2 text-2xl font-bold">
-              $5 <span class="text-sm font-normal text-muted">per session/topic</span>
+              $5
+              <span class="text-sm font-normal text-muted">per session/topic</span>
             </p>
 
-            <a
-              href="contact.html"
-              class="btn-secondary mt-8 w-full"
-            >
-              Ask about enrollment
+            <a href="https://wa.me/2348130421230?text=Hello%20rocksKING%20Productions%2C%20I%27d%20like%20to%20ask%20about%20the%20Standard%20Academy%20programme."
+               class="btn-secondary mt-8 w-full"
+               target="_blank"
+               rel="noopener noreferrer">
+              Ask about enrollment ↗
             </a>
           </article>
 
           <!-- EXCLUSIVE -->
           <article class="fee-card featured">
             <p class="eyebrow">Exclusive</p>
-
-            <h3 class="mt-4 text-3xl font-bold">
-              $300
-            </h3>
-
+            <h3 class="mt-4 text-3xl font-bold">USD $300</h3>
             <p class="mt-3 leading-7 text-muted">
-              The exclusive program option.
+              The Exclusive programme option.
             </p>
 
             <div class="section-rule my-6"></div>
 
             <p class="text-sm text-muted">Pay as you go</p>
-
             <p class="mt-2 text-2xl font-bold">
-              $10 <span class="text-sm font-normal text-muted">per session/topic</span>
+              $10
+              <span class="text-sm font-normal text-muted">per session/topic</span>
             </p>
 
-            <a
-              href="contact.html"
-              class="btn-primary mt-8 w-full"
-            >
-              Ask about enrollment
+            <a href="https://wa.me/2348130421230?text=Hello%20rocksKING%20Productions%2C%20I%27d%20like%20to%20ask%20about%20the%20Exclusive%20Academy%20programme."
+               class="btn-primary mt-8 w-full"
+               target="_blank"
+               rel="noopener noreferrer">
+              Ask about enrollment ↗
             </a>
           </article>
 
         </div>
 
         <p class="mt-6 text-sm leading-6 text-muted">
-          Fees are displayed as stated on the supplied academy page.
-          Confirm the current prices and payment terms before enrolling.
+          Fees are displayed as stated on the supplied Academy page.
+          Confirm current prices and payment terms before enrolling.
         </p>
 
       </div>
     </section>
 
-    <!-- NOTES -->
+    <!-- IMPORTANT NOTES -->
     <section id="notes" class="py-16 md:py-24">
       <div class="container-main">
 
         <div class="mb-10 max-w-2xl">
           <p class="eyebrow mb-4">Before you enroll</p>
-
           <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">
             Important Notes
           </h2>
@@ -725,13 +680,11 @@
             <div class="mb-4 flex h-10 w-10 items-center justify-center rounded-lg border border-brand text-gold">
               01
             </div>
-
             <h3 class="text-lg font-bold">Prerequisites</h3>
-
             <p class="mt-3 leading-7 text-muted">
               This is not a general music or computer training class.
               Students are expected to have fundamental music and computing
-              skills. Basic concepts are not the main focus of the program.
+              skills. Basic concepts are not the main focus of the programme.
             </p>
           </article>
 
@@ -739,13 +692,11 @@
             <div class="mb-4 flex h-10 w-10 items-center justify-center rounded-lg border border-brand text-gold">
               02
             </div>
-
             <h3 class="text-lg font-bold">Additional instruction</h3>
-
             <p class="mt-3 leading-7 text-muted">
               If a student needs foundational music or computer instruction,
               it may be provided during a scheduled session. This reduces
-              the time available for the main course, and additional sessions
+              time available for the main course, and additional sessions
               may need to be purchased.
             </p>
           </article>
@@ -754,9 +705,7 @@
             <div class="mb-4 flex h-10 w-10 items-center justify-center rounded-lg border border-brand text-gold">
               03
             </div>
-
             <h3 class="text-lg font-bold">Flexible learning</h3>
-
             <p class="mt-3 leading-7 text-muted">
               Students may choose the topics they wish to learn. Check the
               academic calendar to find out when those topics will be taught
@@ -765,11 +714,10 @@
           </article>
 
         </div>
-
       </div>
     </section>
 
-    <!-- FINAL CTA -->
+        <!-- FINAL CALL TO ACTION -->
     <section class="border-t border-brand py-16 md:py-24">
       <div class="container-main">
         <div class="rounded-2xl border border-brand p-8 text-center md:p-14">
@@ -782,12 +730,21 @@
 
           <p class="mx-auto mt-5 max-w-xl leading-7 text-muted">
             Contact rocksKING Productions to ask about course topics,
-            session arrangements, and enrollment.
+            session arrangements, fees, and enrollment.
           </p>
 
-          <a href="contact.html" class="btn-primary mt-8">
-            Contact the academy ↗
-          </a>
+          <div class="mt-8 flex flex-wrap justify-center gap-3">
+            <a
+              href="https://wa.me/2348130421230?text=Hello%20rocksKING%20Productions%2C%20I%27m%20interested%20in%20the%20Music%20%26%20Media%20Academy."
+              class="btn-primary"
+              target="_blank"
+              rel="noopener noreferrer"
+            >WhatsApp the Academy ↗</a>
+
+            <a href="contact.html" class="btn-secondary">
+              Other contact options
+            </a>
+          </div>
 
         </div>
       </div>
@@ -839,6 +796,13 @@
           href="mailto:rockskingmediahub@gmail.com"
           class="menu-link"
         >Email</a>
+
+        <a
+          href="https://wa.me/2348130421230"
+          class="menu-link"
+          target="_blank"
+          rel="noopener noreferrer"
+        >WhatsApp</a>
       </div>
 
       <p class="text-xs text-muted">
@@ -848,6 +812,7 @@
     </div>
   </footer>
 
+  <!-- MOBILE MENU AND FOOTER YEAR -->
   <script>
     const menuToggle = document.querySelector("#menu-toggle");
     const mobileMenu = document.querySelector("#mobile-menu");

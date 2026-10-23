@@ -8,17 +8,16 @@
 
   <meta
     name="description"
-    content="Contact rocksKING Productions for music production, recording, mixing, mastering and visual media enquiries."
+    content="Contact rocksKING Productions for music production, recording, mixing, mastering, video editing, music distribution and creative media enquiries."
   />
 
   <title>Contact Us | rocksKING Productions</title>
-  <link rel="icon" type="image/x-icon" href="images/rocksking-logo.png"/>
+  <link rel="icon" type="image/png" href="images/rocksking-logo.png" />
 
   <script src="https://cdn.tailwindcss.com"></script>
 
   <style>
     :root {
-      /* BRAND VARIABLES */
       --color-bg: #0B0B0D;
       --color-surface: #151518;
       --color-surface-light: #202024;
@@ -28,7 +27,6 @@
       --color-muted: #A4A4AD;
       --color-border: #303035;
 
-      /* DESIGN VARIABLES */
       --font-body: Arial, Helvetica, sans-serif;
       --content-width: 1200px;
       --radius-card: 16px;
@@ -52,6 +50,13 @@
 
     a {
       text-decoration: none;
+    }
+
+    button,
+    input,
+    select,
+    textarea {
+      font: inherit;
     }
 
     .container-main {
@@ -93,19 +98,27 @@
       color: var(--color-accent);
     }
 
-    .btn-primary {
+    .btn-primary,
+    .btn-secondary {
       display: inline-flex;
       align-items: center;
       justify-content: center;
       gap: 8px;
       padding: 12px 18px;
-      border: 1px solid var(--color-accent);
       border-radius: 6px;
+      font-size: 14px;
+      font-weight: 700;
+      transition:
+        background 180ms ease,
+        border-color 180ms ease,
+        transform 180ms ease;
+    }
+
+    .btn-primary {
+      border: 1px solid var(--color-accent);
       background: var(--color-accent);
       color: var(--color-bg);
-      font-weight: 700;
       cursor: pointer;
-      transition: background 180ms ease, transform 180ms ease;
     }
 
     .btn-primary:hover {
@@ -114,14 +127,8 @@
     }
 
     .btn-secondary {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 13px 19px;
       border: 1px solid var(--color-border);
-      border-radius: 6px;
       color: var(--color-text);
-      transition: border-color 180ms ease;
     }
 
     .btn-secondary:hover {
@@ -139,13 +146,18 @@
     }
 
     .contact-card {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
       background: var(--color-surface);
       border: 1px solid var(--color-border);
       border-radius: var(--radius-card);
-      transition: border-color 180ms ease, transform 180ms ease;
+      transition:
+        border-color 180ms ease,
+        transform 180ms ease;
     }
 
-    .contact-card:hover {
+    a.contact-card:hover {
       border-color: var(--color-accent);
       transform: translateY(-2px);
     }
@@ -154,6 +166,7 @@
       display: grid;
       width: 46px;
       height: 46px;
+      flex-shrink: 0;
       place-items: center;
       border-radius: 12px;
       background: var(--color-surface-light);
@@ -163,6 +176,7 @@
     }
 
     .form-field {
+      display: block;
       width: 100%;
       margin-top: 8px;
       padding: 13px 14px;
@@ -171,7 +185,6 @@
       background: var(--color-bg);
       color: var(--color-text);
       outline: none;
-      font: inherit;
     }
 
     .form-field::placeholder {
@@ -188,8 +201,8 @@
     }
 
     textarea.form-field {
-      resize: vertical;
       min-height: 140px;
+      resize: vertical;
     }
 
     .mobile-menu {
@@ -198,6 +211,16 @@
 
     .mobile-menu.is-open {
       display: flex;
+    }
+
+    .whatsapp-text {
+      color: var(--color-accent);
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    #form-status {
+      overflow-wrap: anywhere;
     }
 
     @media (max-width: 767px) {
@@ -220,22 +243,22 @@
 <body>
 
   <!-- HEADER -->
-   <header class="sticky top-0 z-50 border-b border-brand bg-brand-bg/95 backdrop-blur">
+  <header class="sticky top-0 z-50 border-b border-brand bg-[#0B0B0D]/95 backdrop-blur">
     <nav
       class="container-main flex min-h-[76px] items-center justify-between gap-6"
       aria-label="Main navigation"
     >
-    <a href="index.html"
-   class="shrink-0 leading-tight"
-   aria-label="rocksKING Productions home">
-
-  <img
-    src="images/rocksking-logo.png"
-    alt="rocksKING Productions"
-    class="h-12 w-auto object-contain"
-  />
-
-</a>
+      <a
+        href="index.html"
+        class="shrink-0 leading-tight"
+        aria-label="rocksKING Productions home"
+      >
+        <img
+          src="images/rocksking-logo.png"
+          alt="rocksKING Productions"
+          class="h-12 w-auto object-contain"
+        />
+      </a>
 
       <div class="hidden items-center gap-7 md:flex">
         <a href="index.html" class="menu-link text-sm">Home</a>
@@ -243,7 +266,11 @@
         <a href="portfolio.html" class="menu-link text-sm">Our Work</a>
         <a href="academy.html" class="menu-link text-sm">Academy</a>
         <a href="about.html" class="menu-link text-sm">About</a>
-        <a href="contact.html" class="btn-primary text-sm ">Let's Talk ↗</a>
+        <a
+          href="contact.html"
+          class="btn-primary text-sm"
+          aria-current="page"
+        >Let's Talk ↗</a>
       </div>
 
       <button
@@ -257,20 +284,22 @@
       </button>
     </nav>
 
-    <div id="mobile-menu"
-         class="mobile-menu container-main flex-col gap-5 pb-6 md:hidden">
+    <div
+      id="mobile-menu"
+      class="mobile-menu container-main flex-col gap-5 pb-6 md:hidden"
+    >
       <a href="index.html" class="menu-link">Home</a>
       <a href="services.html" class="menu-link">Services</a>
       <a href="portfolio.html" class="menu-link">Our Work</a>
       <a href="academy.html" class="menu-link">Academy</a>
       <a href="about.html" class="menu-link">About</a>
-      <a href="contact.html" class="text-accent">Contact</a>
+      <a href="contact.html" class="text-accent" aria-current="page">Contact</a>
     </div>
   </header>
 
   <main>
 
-    <!-- PAGE INTRO -->
+    <!-- HERO -->
     <section class="page-hero border-b border-brand">
       <div class="container-main py-20 md:py-28">
         <p class="eyebrow mb-5">Let's talk about your next project</p>
@@ -281,10 +310,19 @@
         </h1>
 
         <p class="mt-6 max-w-2xl leading-7 text-muted">
-          Whether you need music production, recording, mixing,
-          mastering or visual media, tell us what you're creating.
+          Whether you need music production, recording, mixing, mastering,
+          video editing or music distribution, tell us what you're creating.
           Let's figure out the next step together.
         </p>
+
+        <a
+          href="https://wa.me/2348130421230?text=Hello%20rocksKING%20Productions%2C%20I%27d%20like%20to%20discuss%20a%20project."
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn-primary mt-8"
+        >
+          Chat on WhatsApp ↗
+        </a>
       </div>
     </section>
 
@@ -292,7 +330,7 @@
     <section class="py-16 md:py-24">
       <div class="container-main grid items-start gap-10 lg:grid-cols-[0.85fr_1.15fr]">
 
-        <!-- LEFT: CONTACT DETAILS -->
+        <!-- CONTACT DETAILS -->
         <div>
           <p class="eyebrow mb-4">Get in touch</p>
 
@@ -307,49 +345,65 @@
 
           <div class="mt-8 space-y-4">
 
-            <!-- Replace this placeholder when the tutor supplies his number -->
-            <div class="contact-card flex items-start gap-4 p-5">
+            <!-- WHATSAPP -->
+            <a
+              href="https://wa.me/2348130421230?text=Hello%20rocksKING%20Productions%2C%20I%27d%20like%20to%20make%20a%20project%20enquiry."
+              target="_blank"
+              rel="noopener noreferrer"
+              class="contact-card p-5"
+            >
               <div class="contact-icon" aria-hidden="true">◉</div>
 
               <div class="min-w-0 flex-1">
                 <h3 class="font-bold">WhatsApp</h3>
+
                 <p class="mt-1 text-sm leading-6 text-muted">
                   Chat directly with the studio about your project.
                 </p>
 
-                <span class="mt-3 inline-block text-sm text-accent">
-                  Contact link coming soon
+                <span class="mt-3 inline-block whatsapp-text">
+                  Message us on WhatsApp ↗
                 </span>
               </div>
-            </div>
+            </a>
 
-            <a href="mailto:rockskingmediahub@gmail.com"
-               class="contact-card flex items-start gap-4 p-5">
+            <!-- EMAIL -->
+            <a
+              href="mailto:rockskingmediahub@gmail.com"
+              class="contact-card p-5"
+            >
               <div class="contact-icon" aria-hidden="true">✉</div>
 
               <div class="min-w-0 flex-1">
                 <h3 class="font-bold">Email</h3>
+
                 <p class="mt-1 break-all text-sm text-muted">
                   rockskingmediahub@gmail.com
                 </p>
-                <span class="mt-3 inline-block text-sm text-accent">
+
+                <span class="mt-3 inline-block whatsapp-text">
                   Send an email ↗
                 </span>
               </div>
             </a>
 
-            <a href="https://maps.app.goo.gl/XC81TNEo7gkLFEPb9"
-               target="_blank"
-               rel="noopener noreferrer"
-               class="contact-card flex items-start gap-4 p-5">
+            <!-- LOCATION -->
+            <a
+              href="https://maps.app.goo.gl/XC81TNEo7gkLFEPb9"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="contact-card p-5"
+            >
               <div class="contact-icon" aria-hidden="true">⌖</div>
 
               <div class="min-w-0 flex-1">
                 <h3 class="font-bold">Studio Location</h3>
+
                 <p class="mt-1 text-sm leading-6 text-muted">
                   Find rocksKING Studio using Google Maps.
                 </p>
-                <span class="mt-3 inline-block text-sm text-accent">
+
+                <span class="mt-3 inline-block whatsapp-text">
                   Get directions ↗
                 </span>
               </div>
@@ -362,35 +416,41 @@
             <p class="eyebrow mb-4">Follow the studio</p>
 
             <div class="flex flex-wrap gap-3">
-              <a href="https://instagram.com/rockskingprod"
-                 target="_blank" rel="noopener noreferrer"
-                 class="btn-secondary text-sm">
-                Instagram ↗
-              </a>
+              <a
+                href="https://instagram.com/rockskingprod"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn-secondary text-sm"
+              >Instagram ↗</a>
 
-              <a href="https://youtube.com/@rockskingprod"
-                 target="_blank" rel="noopener noreferrer"
-                 class="btn-secondary text-sm">
-                YouTube ↗
-              </a>
+              <a
+                href="https://youtube.com/@rockskingprod"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn-secondary text-sm"
+              >YouTube ↗</a>
 
-              <a href="https://fb.com/rockskingprod"
-                 target="_blank" rel="noopener noreferrer"
-                 class="btn-secondary text-sm">
-                Facebook ↗
-              </a>
+              <a
+                href="https://fb.com/rockskingprod"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn-secondary text-sm"
+              >Facebook ↗</a>
             </div>
           </div>
         </div>
 
-        <!-- RIGHT: ENQUIRY FORM -->
+        <!-- ENQUIRY FORM -->
         <div class="rounded-2xl border border-brand bg-surface p-6 md:p-9">
           <p class="eyebrow mb-3">Project enquiry</p>
 
-          <h2 class="text-2xl font-bold">Tell us what you have in mind.</h2>
+          <h2 class="text-2xl font-bold">
+            Tell us what you have in mind.
+          </h2>
 
           <p class="mt-3 text-sm leading-6 text-muted">
-            Fill in the details below to prepare an enquiry email.
+            Complete the form to prepare an enquiry email addressed to
+            rocksKING Productions.
           </p>
 
           <form id="contact-form" class="mt-8 space-y-5">
@@ -400,6 +460,7 @@
                 <label for="name" class="text-sm font-semibold">
                   Your name
                 </label>
+
                 <input
                   id="name"
                   name="name"
@@ -415,6 +476,7 @@
                 <label for="email" class="text-sm font-semibold">
                   Email address
                 </label>
+
                 <input
                   id="email"
                   name="email"
@@ -432,15 +494,22 @@
                 What do you need?
               </label>
 
-              <select id="service" name="service" class="form-field" required>
+              <select
+                id="service"
+                name="service"
+                class="form-field"
+                required
+              >
                 <option value="">Choose a service</option>
-                <option>Music Production</option>
-                <option>Mixing &amp; Mastering</option>
-                <option>Recording Session</option>
-                <option>Video Production</option>
-                <option>Music Production Course</option>
-                <option>Custom Project</option>
-                <option>Something else</option>
+                <option value="Music Production">Music Production</option>
+                <option value="Mixing & Mastering">Mixing &amp; Mastering</option>
+                <option value="Recording">Recording Sessions</option>
+                <option value="Video Production">Video Production</option>
+                <option value="Video Editing">Video Editing</option>
+                <option value="Music Distribution">Music Distribution</option>
+                <option value="Music Production Course">Music Production Courses</option>
+                <option value="Custom Project">Custom Project</option>
+                <option value="Other">Something else</option>
               </select>
             </div>
 
@@ -451,16 +520,16 @@
 
               <select id="budget" name="budget" class="form-field">
                 <option value="">Prefer to discuss</option>
-                <option>Under $50</option>
-                <option>$50–$150</option>
-                <option>$150–$300</option>
-                <option>$300+</option>
-                <option>Other / local currency</option>
+                <option value="Under $50">Under $50</option>
+                <option value="$50–$150">$50–$150</option>
+                <option value="$150–$300">$150–$300</option>
+                <option value="$300+">$300+</option>
+                <option value="Other / local currency">Other / local currency</option>
               </select>
 
               <p class="mt-2 text-xs text-muted">
-                This helps the studio understand your project.
-                Final pricing depends on the agreed scope.
+                This helps the studio understand your project. Final pricing
+                depends on the agreed scope.
               </p>
             </div>
 
@@ -483,15 +552,16 @@
             </button>
 
             <p class="text-xs leading-5 text-muted">
-              This form opens your email application with your message
-              prepared. It does not store or submit your information to
-              a server.
+              This form prepares an email in Gmail. It does not send your
+              message automatically or store form submissions on this website.
             </p>
 
-            <p id="form-status"
-               class="text-sm text-accent"
-               role="status"
-               aria-live="polite"></p>
+            <p
+              id="form-status"
+              class="text-sm text-accent"
+              role="status"
+              aria-live="polite"
+            ></p>
 
           </form>
         </div>
@@ -511,6 +581,15 @@
         <p class="mt-4 text-sm text-muted">
           Music, media and creative expression.
         </p>
+
+        <a
+          href="https://wa.me/2348130421230?text=Hello%20rocksKING%20Productions!"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn-primary mt-7"
+        >
+          Let's talk ↗
+        </a>
       </div>
     </section>
 
@@ -518,14 +597,44 @@
 
   <!-- FOOTER -->
   <footer class="border-t border-brand py-8">
-    <div class="container-main flex flex-col justify-between gap-4 sm:flex-row sm:items-center">
+    <div class="container-main flex flex-col justify-between gap-5 sm:flex-row sm:items-center">
+
       <div>
         <a href="index.html" class="font-bold">
           rocks<span class="text-accent">KING</span> Productions
         </a>
+
         <p class="mt-1 text-xs text-muted">
           Making your imagination loud.
         </p>
+      </div>
+
+      <div class="flex flex-wrap gap-5 text-sm">
+        <a
+          class="menu-link"
+          href="https://instagram.com/rockskingprod"
+          target="_blank"
+          rel="noopener noreferrer"
+        >Instagram</a>
+
+        <a
+          class="menu-link"
+          href="https://youtube.com/@rockskingprod"
+          target="_blank"
+          rel="noopener noreferrer"
+        >YouTube</a>
+
+        <a
+          class="menu-link"
+          href="https://fb.com/rockskingprod"
+          target="_blank"
+          rel="noopener noreferrer"
+        >Facebook</a>
+
+        <a
+          class="menu-link"
+          href="mailto:rockskingmediahub@gmail.com"
+        >Email</a>
       </div>
 
       <p class="text-xs text-muted">
@@ -554,20 +663,35 @@
       });
     });
 
-    // Footer year
+    // Automatic footer year
     document.querySelector("#year").textContent =
       new Date().getFullYear();
 
-    // Prefill service if visitor came from a service-specific link
+    // Match service links from services.html to the form options
     const params = new URLSearchParams(window.location.search);
     const requestedService = params.get("service");
     const serviceSelect = document.querySelector("#service");
 
+    const serviceAliases = {
+      "Music Production": "Music Production",
+      "Mixing & Mastering": "Mixing & Mastering",
+      "Mixing & Mastering": "Mixing & Mastering",
+      "Recording": "Recording",
+      "Recording Session": "Recording",
+      "Video Production": "Video Production",
+      "Video Editing": "Video Editing",
+      "Music Distribution": "Music Distribution",
+      "Music Production Course": "Music Production Course",
+      "Music Production Courses": "Music Production Course",
+      "Custom Project": "Custom Project"
+    };
+
     if (requestedService) {
+      const normalizedService =
+        serviceAliases[requestedService] || requestedService;
+
       const matchingOption = [...serviceSelect.options].find(
-        (option) =>
-          option.value === requestedService ||
-          option.textContent === requestedService
+        (option) => option.value === normalizedService
       );
 
       if (matchingOption) {
@@ -575,8 +699,7 @@
       }
     }
 
-   
-    // Prepare an enquiry email using Gmail
+    // Prepare an enquiry email in Gmail
     const contactForm = document.querySelector("#contact-form");
     const formStatus = document.querySelector("#form-status");
 
@@ -587,11 +710,11 @@
 
       const formData = new FormData(contactForm);
 
-      const name = formData.get("name").trim();
-      const email = formData.get("email").trim();
-      const service = formData.get("service");
-      const budget = formData.get("budget") || "Prefer to discuss";
-      const message = formData.get("message").trim();
+      const name = String(formData.get("name") || "").trim();
+      const email = String(formData.get("email") || "").trim();
+      const service = String(formData.get("service") || "");
+      const budget = String(formData.get("budget") || "Prefer to discuss");
+      const message = String(formData.get("message") || "").trim();
 
       const subject = `Project enquiry: ${service}`;
 
@@ -619,19 +742,15 @@
       gmailURL.searchParams.set("body", body);
 
       formStatus.textContent =
-        "Opening Gmail with your enquiry prepared. Review the email and press Send.";
+        "Opening Gmail. Review your prepared enquiry and press Send.";
 
-      const newTab = window.open(
-        gmailURL.toString(),
-        "_blank"
-      );
+      const newTab = window.open(gmailURL.toString(), "_blank");
 
-      // If the browser blocks the new tab, open Gmail in this tab.
+      // Fall back to the current tab if the browser blocks the new tab.
       if (!newTab) {
         window.location.href = gmailURL.toString();
       }
     });
-
   </script>
 
 </body>

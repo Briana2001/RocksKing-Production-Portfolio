@@ -5,7 +5,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#0B0B0D" />
-  <link rel="icon" type="image/x-icon" href="images/rocksking-logo.png"/>
+
+  <link rel="icon" type="image/png" href="images/rocksking-logo.png" />
+
+  <meta name="description" content="Explore rocksKING Productions services: music production, recording, mixing and mastering, video production, video editing, music distribution, and music production training." />
 
   <title>Our Services | rocksKING Productions</title>
 
@@ -13,7 +16,6 @@
 
   <style>
     :root {
-      /* BRAND VARIABLES — keep these consistent across every page */
       --color-bg: #0B0B0D;
       --color-surface: #151518;
       --color-surface-light: #202024;
@@ -23,11 +25,9 @@
       --color-muted: #A4A4AD;
       --color-border: #303035;
 
-      /* DESIGN VARIABLES */
       --font-body: Arial, Helvetica, sans-serif;
       --content-width: 1200px;
       --radius-card: 16px;
-      --section-space: 88px;
     }
 
     * {
@@ -50,6 +50,11 @@
       text-decoration: none;
     }
 
+    button,
+    a {
+      -webkit-tap-highlight-color: transparent;
+    }
+
     .container-main {
       width: min(100% - 40px, var(--content-width));
       margin-inline: auto;
@@ -61,10 +66,6 @@
 
     .text-accent {
       color: var(--color-accent);
-    }
-
-    .bg-surface {
-      background: var(--color-surface);
     }
 
     .border-brand {
@@ -79,18 +80,26 @@
       text-transform: uppercase;
     }
 
-    .btn-primary {
+    .btn-primary,
+    .btn-secondary {
       display: inline-flex;
       align-items: center;
       justify-content: center;
       gap: 8px;
       padding: 13px 19px;
-      border: 1px solid var(--color-accent);
       border-radius: 6px;
+      font-size: 14px;
+      font-weight: 700;
+      transition:
+        background 180ms ease,
+        border-color 180ms ease,
+        transform 180ms ease;
+    }
+
+    .btn-primary {
+      border: 1px solid var(--color-accent);
       background: var(--color-accent);
       color: var(--color-bg);
-      font-weight: 700;
-      transition: background 180ms ease, transform 180ms ease;
     }
 
     .btn-primary:hover {
@@ -99,18 +108,13 @@
     }
 
     .btn-secondary {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 13px 19px;
       border: 1px solid var(--color-border);
-      border-radius: 6px;
       color: var(--color-text);
-      transition: border-color 180ms ease;
     }
 
     .btn-secondary:hover {
       border-color: var(--color-accent);
+      transform: translateY(-2px);
     }
 
     .menu-link {
@@ -178,6 +182,15 @@
       letter-spacing: 0.12em;
     }
 
+    .whatsapp-link {
+      color: var(--color-accent);
+      font-weight: 700;
+    }
+
+    .whatsapp-link:hover {
+      color: var(--color-accent-hover);
+    }
+
     @media (max-width: 767px) {
       .container-main {
         width: min(100% - 32px, var(--content-width));
@@ -197,30 +210,37 @@
 
 <body>
 
-  <!-- SHARED SITE NAVIGATION -->
-  <header class="sticky top-0 z-50 border-b border-brand bg-brand-bg/95 backdrop-blur">
+  <!-- NAVIGATION -->
+  <header class="sticky top-0 z-50 border-b border-brand bg-[#0B0B0D]/95 backdrop-blur">
     <nav
       class="container-main flex min-h-[76px] items-center justify-between gap-6"
       aria-label="Main navigation"
     >
-      <a href="index.html"
-   class="shrink-0 leading-tight"
-   aria-label="rocksKING Productions home">
+      <a
+        href="index.html"
+        class="shrink-0 leading-tight"
+        aria-label="rocksKING Productions home"
+      >
+        <img
+          src="images/rocksking-logo.png"
+          alt="rocksKING Productions"
+          class="h-12 w-auto object-contain"
+        />
+      </a>
 
-  <img
-    src="images/rocksking-logo.png"
-    alt="rocksKING Productions"
-    class="h-12 w-auto object-contain"
-  />
-
-</a>
       <div class="hidden items-center gap-7 md:flex">
         <a href="index.html" class="menu-link text-sm">Home</a>
-        <a href="services.html" class="text-sm font-semibold text-accent"
-           aria-current="page">Services</a>
+
+        <a
+          href="services.html"
+          class="text-sm font-semibold text-accent"
+          aria-current="page"
+        >Services</a>
+
         <a href="portfolio.html" class="menu-link text-sm">Our Work</a>
         <a href="academy.html" class="menu-link text-sm">Academy</a>
         <a href="about.html" class="menu-link text-sm">About</a>
+
         <a href="contact.html" class="btn-primary text-sm">Let's Talk ↗</a>
       </div>
 
@@ -235,8 +255,10 @@
       </button>
     </nav>
 
-    <div id="mobile-menu"
-         class="mobile-menu container-main flex-col gap-5 pb-6 md:hidden">
+    <div
+      id="mobile-menu"
+      class="mobile-menu container-main flex-col gap-5 pb-6 md:hidden"
+    >
       <a href="index.html" class="menu-link">Home</a>
       <a href="services.html" class="text-accent">Services</a>
       <a href="portfolio.html" class="menu-link">Our Work</a>
@@ -248,7 +270,7 @@
 
   <main>
 
-    <!-- PAGE INTRO -->
+    <!-- HERO -->
     <section class="page-hero border-b border-brand">
       <div class="container-main py-20 md:py-28">
         <p class="eyebrow mb-5">What we bring to the table</p>
@@ -259,36 +281,48 @@
         </h1>
 
         <p class="mt-6 max-w-2xl leading-7 text-muted">
-          From recording your first idea to delivering a finished song
-          or visual project, rocksKING Productions helps turn creative
-          ideas into finished work.
+          From recording your first idea to preparing your music for release
+          and creating compelling visual content, rocksKING Productions
+          helps turn creative ideas into finished work.
         </p>
 
         <div class="mt-8 flex flex-wrap gap-3">
-          <a href="#our-services" class="btn-primary">Explore services ↓</a>
-          <a href="contact.html" class="btn-secondary">Request a quote ↗</a>
+          <a href="#our-services" class="btn-primary">
+            Explore services ↓
+          </a>
+
+          <a
+            href="https://wa.me/2348130421230?text=Hello%20rocksKING%20Productions%2C%20I%27d%20like%20to%20make%20an%20enquiry."
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn-secondary"
+          >
+            Chat on WhatsApp ↗
+          </a>
         </div>
       </div>
     </section>
 
-    <!-- SERVICES GRID -->
+    <!-- SERVICES -->
     <section id="our-services" class="py-20 md:py-24">
       <div class="container-main">
 
         <div class="mb-12 max-w-2xl">
           <p class="eyebrow mb-4">Our expertise</p>
+
           <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">
             Creative services, under one roof.
           </h2>
+
           <p class="mt-4 leading-7 text-muted">
-            Choose the service that fits your project. Have a different
-            idea? Get in touch and let's discuss it.
+            Choose the service that fits your project. Not sure what you
+            need yet? Get in touch and let's discuss your idea.
           </p>
         </div>
 
         <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
 
-          <!-- MUSIC PRODUCTION -->
+          <!-- 01 MUSIC PRODUCTION -->
           <article class="service-card p-6 md:p-8">
             <div class="service-icon" aria-hidden="true">♫</div>
 
@@ -297,7 +331,7 @@
 
             <p class="mt-3 text-sm text-muted">
               Bring your musical ideas to life with creative production
-              and studio support.
+              and professional studio support.
             </p>
 
             <ul class="mt-5 space-y-3 text-sm text-muted">
@@ -307,18 +341,22 @@
               <li>— Live recording</li>
             </ul>
 
-            <a href="contact.html?service=Music%20Production"
-               class="menu-link mt-8 inline-block text-sm font-semibold">
+            <a
+              href="https://wa.me/2348130421230?text=Hello%20rocksKING%20Productions%2C%20I%27m%20interested%20in%20Music%20Production."
+              target="_blank"
+              rel="noopener noreferrer"
+              class="whatsapp-link mt-8 inline-block text-sm"
+            >
               Discuss your project ↗
             </a>
           </article>
 
-          <!-- MIXING AND MASTERING -->
+          <!-- 02 MIXING AND MASTERING -->
           <article class="service-card p-6 md:p-8">
             <div class="service-icon" aria-hidden="true">◉</div>
 
             <p class="eyebrow mt-6">02 / Audio</p>
-            <h3 class="mt-2 text-xl font-bold">Mixing & Mastering</h3>
+            <h3 class="mt-2 text-xl font-bold">Mixing &amp; Mastering</h3>
 
             <p class="mt-3 text-sm text-muted">
               Refine your recordings and prepare your music for its
@@ -332,13 +370,17 @@
               <li>— Final mastering</li>
             </ul>
 
-            <a href="contact.html?service=Mixing%20%26%20Mastering"
-               class="menu-link mt-8 inline-block text-sm font-semibold">
+            <a
+              href="https://wa.me/2348130421230?text=Hello%20rocksKING%20Productions%2C%20I%27m%20interested%20in%20Mixing%20and%20Mastering."
+              target="_blank"
+              rel="noopener noreferrer"
+              class="whatsapp-link mt-8 inline-block text-sm"
+            >
               Discuss your project ↗
             </a>
           </article>
 
-          <!-- RECORDING -->
+          <!-- 03 RECORDING -->
           <article class="service-card p-6 md:p-8">
             <div class="service-icon" aria-hidden="true">🎙</div>
 
@@ -346,7 +388,7 @@
             <h3 class="mt-2 text-xl font-bold">Recording Sessions</h3>
 
             <p class="mt-3 text-sm text-muted">
-              Record your voice, capture performances and work on your
+              Record your voice, capture performances and develop your
               project in a studio environment.
             </p>
 
@@ -357,13 +399,17 @@
               <li>— Remote recording enquiries</li>
             </ul>
 
-            <a href="contact.html?service=Recording"
-               class="menu-link mt-8 inline-block text-sm font-semibold">
+            <a
+              href="https://wa.me/2348130421230?text=Hello%20rocksKING%20Productions%2C%20I%27d%20like%20to%20enquire%20about%20a%20Recording%20Session."
+              target="_blank"
+              rel="noopener noreferrer"
+              class="whatsapp-link mt-8 inline-block text-sm"
+            >
               Discuss your project ↗
             </a>
           </article>
 
-          <!-- VIDEO -->
+          <!-- 04 VIDEO PRODUCTION -->
           <article class="service-card p-6 md:p-8">
             <div class="service-icon" aria-hidden="true">▷</div>
 
@@ -376,28 +422,90 @@
             </p>
 
             <ul class="mt-5 space-y-3 text-sm text-muted">
-              <li>— Videography</li>
-              <li>— Music videos</li>
-              <li>— Video editing</li>
-              <li>— Promotional content</li>
+              <li>— Videography enquiries</li>
+              <li>— Music video projects</li>
+              <li>— Promotional video content</li>
+              <li>— Creative visual projects</li>
             </ul>
 
-            <a href="contact.html?service=Video%20Production"
-               class="menu-link mt-8 inline-block text-sm font-semibold">
+            <a
+              href="https://wa.me/2348130421230?text=Hello%20rocksKING%20Productions%2C%20I%27m%20interested%20in%20Video%20Production."
+              target="_blank"
+              rel="noopener noreferrer"
+              class="whatsapp-link mt-8 inline-block text-sm"
+            >
               Discuss your project ↗
             </a>
           </article>
 
-          <!-- COURSES -->
+          <!-- 05 VIDEO EDITING -->
+          <article class="service-card p-6 md:p-8">
+            <div class="service-icon" aria-hidden="true">✂</div>
+
+            <p class="eyebrow mt-6">05 / Visual Media</p>
+            <h3 class="mt-2 text-xl font-bold">Video Editing</h3>
+
+            <p class="mt-3 text-sm text-muted">
+              Turn your raw footage into a polished visual story
+              ready to share with your audience.
+            </p>
+
+            <ul class="mt-5 space-y-3 text-sm text-muted">
+              <li>— Music video editing</li>
+              <li>— Promotional video editing</li>
+              <li>— Footage arrangement and cuts</li>
+              <li>— Creative content editing</li>
+            </ul>
+
+            <a
+              href="https://wa.me/2348130421230?text=Hello%20rocksKING%20Productions%2C%20I%27m%20interested%20in%20Video%20Editing."
+              target="_blank"
+              rel="noopener noreferrer"
+              class="whatsapp-link mt-8 inline-block text-sm"
+            >
+              Discuss your project ↗
+            </a>
+          </article>
+
+          <!-- 06 MUSIC DISTRIBUTION -->
+          <article class="service-card p-6 md:p-8">
+            <div class="service-icon" aria-hidden="true">♫</div>
+
+            <p class="eyebrow mt-6">06 / Music Release</p>
+            <h3 class="mt-2 text-xl font-bold">Music Distribution</h3>
+
+            <p class="mt-3 text-sm text-muted">
+              Get guidance on preparing your music for digital release
+              and reaching listeners on music platforms.
+            </p>
+
+            <ul class="mt-5 space-y-3 text-sm text-muted">
+              <li>— Digital release enquiries</li>
+              <li>— Release preparation guidance</li>
+              <li>— Music platform distribution enquiries</li>
+              <li>— Release planning support</li>
+            </ul>
+
+            <a
+              href="https://wa.me/2348130421230?text=Hello%20rocksKING%20Productions%2C%20I%27m%20interested%20in%20Music%20Distribution."
+              target="_blank"
+              rel="noopener noreferrer"
+              class="whatsapp-link mt-8 inline-block text-sm"
+            >
+              Discuss your release ↗
+            </a>
+          </article>
+
+          <!-- 07 MUSIC PRODUCTION COURSES -->
           <article class="service-card p-6 md:p-8">
             <div class="service-icon" aria-hidden="true">⌘</div>
 
-            <p class="eyebrow mt-6">05 / Education</p>
+            <p class="eyebrow mt-6">07 / Education</p>
             <h3 class="mt-2 text-xl font-bold">Music Production Courses</h3>
 
             <p class="mt-3 text-sm text-muted">
               Develop practical music production skills through
-              training offered by the rocksKING Music & Media Academy.
+              training offered by the rocksKING Music &amp; Media Academy.
             </p>
 
             <ul class="mt-5 space-y-3 text-sm text-muted">
@@ -406,17 +514,19 @@
               <li>— Course schedule and fees</li>
             </ul>
 
-            <a href="academy.html"
-               class="menu-link mt-8 inline-block text-sm font-semibold">
+            <a
+              href="academy.html"
+              class="whatsapp-link mt-8 inline-block text-sm"
+            >
               Explore the Academy ↗
             </a>
           </article>
 
-          <!-- CUSTOM PROJECTS -->
+          <!-- 08 CUSTOM PROJECTS -->
           <article class="service-card p-6 md:p-8">
             <div class="service-icon" aria-hidden="true">✳</div>
 
-            <p class="eyebrow mt-6">06 / Your Idea</p>
+            <p class="eyebrow mt-6">08 / Your Idea</p>
             <h3 class="mt-2 text-xl font-bold">Custom Projects</h3>
 
             <p class="mt-3 text-sm text-muted">
@@ -430,8 +540,12 @@
               <li>— Project-specific requests</li>
             </ul>
 
-            <a href="contact.html?service=Custom%20Project"
-               class="menu-link mt-8 inline-block text-sm font-semibold">
+            <a
+              href="https://wa.me/2348130421230?text=Hello%20rocksKING%20Productions%2C%20I%20have%20a%20custom%20creative%20project%20to%20discuss."
+              target="_blank"
+              rel="noopener noreferrer"
+              class="whatsapp-link mt-8 inline-block text-sm"
+            >
               Tell us your idea ↗
             </a>
           </article>
@@ -441,14 +555,16 @@
     </section>
 
     <!-- HOW IT WORKS -->
-    <section class="border-y border-brand bg-surface py-20 md:py-24">
+    <section class="border-y border-brand bg-[#151518] py-20 md:py-24">
       <div class="container-main">
 
         <div class="mb-12 max-w-2xl">
           <p class="eyebrow mb-4">Simple process</p>
+
           <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">
             From idea to delivery.
           </h2>
+
           <p class="mt-4 leading-7 text-muted">
             A straightforward way to get your project moving.
           </p>
@@ -459,8 +575,9 @@
           <div>
             <p class="process-number">STEP 01</p>
             <h3 class="mt-3 text-xl font-bold">Tell us what you need</h3>
+
             <p class="mt-3 text-sm leading-7 text-muted">
-              Share your idea, goals, preferred service and any
+              Share your idea, preferred service, goals and any
               references you have.
             </p>
           </div>
@@ -468,6 +585,7 @@
           <div>
             <p class="process-number">STEP 02</p>
             <h3 class="mt-3 text-xl font-bold">Discuss the details</h3>
+
             <p class="mt-3 text-sm leading-7 text-muted">
               Confirm the scope, pricing, timeline and project
               requirements before work begins.
@@ -477,6 +595,7 @@
           <div>
             <p class="process-number">STEP 03</p>
             <h3 class="mt-3 text-xl font-bold">Bring it to life</h3>
+
             <p class="mt-3 text-sm leading-7 text-muted">
               Collaborate with the studio to move your project
               towards completion.
@@ -487,10 +606,11 @@
       </div>
     </section>
 
-    <!-- CTA -->
+    <!-- FINAL CTA -->
     <section class="py-20 md:py-24">
       <div class="container-main">
         <div class="rounded-2xl border border-brand p-8 text-center md:p-14">
+
           <p class="eyebrow mb-4">Let's create</p>
 
           <h2 class="mx-auto max-w-2xl text-3xl font-bold tracking-tight sm:text-4xl">
@@ -498,13 +618,25 @@
           </h2>
 
           <p class="mx-auto mt-5 max-w-xl leading-7 text-muted">
-            Tell us about your project and request a quote.
-            We'll discuss the right next step with you.
+            Tell us about your project. Reach out to discuss your needs,
+            ask questions and request a quote.
           </p>
 
-          <a href="contact.html" class="btn-primary mt-8">
-            Request a quote ↗
-          </a>
+          <div class="mt-8 flex flex-wrap justify-center gap-3">
+            <a
+              href="https://wa.me/2348130421230?text=Hello%20rocksKING%20Productions%2C%20I%27d%20like%20to%20discuss%20a%20project%20and%20request%20a%20quote."
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn-primary"
+            >
+              Chat on WhatsApp ↗
+            </a>
+
+            <a href="contact.html" class="btn-secondary">
+              Contact page
+            </a>
+          </div>
+
         </div>
       </div>
     </section>
@@ -519,26 +651,56 @@
         <a href="index.html" class="font-bold">
           rocks<span class="text-accent">KING</span> Productions
         </a>
-        <p class="mt-1 text-xs text-muted">Making your imagination loud.</p>
+
+        <p class="mt-1 text-xs text-muted">
+          Making your imagination loud.
+        </p>
       </div>
 
       <div class="flex flex-wrap gap-5 text-sm">
-        <a class="menu-link" href="https://instagram.com/rockskingprod"
-           target="_blank" rel="noopener noreferrer">Instagram</a>
-        <a class="menu-link" href="https://youtube.com/@rockskingprod"
-           target="_blank" rel="noopener noreferrer">YouTube</a>
-        <a class="menu-link" href="https://fb.com/rockskingprod"
-           target="_blank" rel="noopener noreferrer">Facebook</a>
-        <a class="menu-link" href="mailto:rockskingmediahub@gmail.com">Email</a>
+        <a
+          class="menu-link"
+          href="https://instagram.com/rockskingprod"
+          target="_blank"
+          rel="noopener noreferrer"
+        >Instagram</a>
+
+        <a
+          class="menu-link"
+          href="https://youtube.com/@rockskingprod"
+          target="_blank"
+          rel="noopener noreferrer"
+        >YouTube</a>
+
+        <a
+          class="menu-link"
+          href="https://fb.com/rockskingprod"
+          target="_blank"
+          rel="noopener noreferrer"
+        >Facebook</a>
+
+        <a
+          class="menu-link"
+          href="mailto:rockskingmediahub@gmail.com"
+        >Email</a>
+
+        <a
+          class="menu-link"
+          href="https://wa.me/2348130421230"
+          target="_blank"
+          rel="noopener noreferrer"
+        >WhatsApp</a>
       </div>
 
       <p class="text-xs text-muted">
         © <span id="year"></span> rocksKING Productions
       </p>
+
     </div>
   </footer>
 
   <script>
+    // Mobile navigation
     const menuToggle = document.querySelector("#menu-toggle");
     const mobileMenu = document.querySelector("#mobile-menu");
 
@@ -557,6 +719,7 @@
       });
     });
 
+    // Automatic footer year
     document.querySelector("#year").textContent =
       new Date().getFullYear();
   </script>
