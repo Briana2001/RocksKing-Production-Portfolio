@@ -1,0 +1,1074 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description" content="Enjoy the rocksKING Studio One Month Bonanza. Full song production for ₦65,000, including beat production, recording, mixing and mastering. Visit our Wuye Branch in Abuja.">
+
+  <meta name="theme-color" content="#0B0B0D">
+  <link rel="icon" type="image/png" href="images/rocksking-logo.png">
+
+  <title>Studio Bonanza — rocksKING Productions</title>
+
+  <style>
+    :root {
+      --bg: #0B0B0D;
+      --surface: #151518;
+      --surface-light: #202024;
+      --gold: #C9A45C;
+      --gold-light: #E0BD78;
+      --text: #F5F5F5;
+      --muted: #A4A4AD;
+      --border: #303035;
+      --radius: 18px;
+      --content: 1120px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 90px;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.6;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button, a {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .container {
+      width: min(100% - 36px, var(--content));
+      margin-inline: auto;
+    }
+
+    .muted {
+      color: var(--muted);
+    }
+
+    .gold {
+      color: var(--gold);
+    }
+
+    .eyebrow {
+      color: var(--gold);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+
+    .section {
+      padding: 76px 0;
+    }
+
+    .section-heading {
+      max-width: 680px;
+      margin-bottom: 32px;
+    }
+
+    .section-heading h2 {
+      margin: 10px 0;
+      font-size: clamp(28px, 4vw, 42px);
+      line-height: 1.15;
+      letter-spacing: -0.04em;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+    }
+
+    .btn {
+      display: inline-flex;
+      min-height: 48px;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 13px 20px;
+      border: 1px solid var(--border);
+      border-radius: 7px;
+      font-size: 14px;
+      font-weight: 800;
+      text-align: center;
+      transition: transform 180ms ease, background 180ms ease,
+        border-color 180ms ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-gold {
+      color: #0B0B0D;
+      background: var(--gold);
+      border-color: var(--gold);
+    }
+
+    .btn-gold:hover {
+      background: var(--gold-light);
+      border-color: var(--gold-light);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--text);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--gold);
+    }
+
+    /* Navigation */
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(11, 11, 13, 0.94);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(14px);
+    }
+
+    .nav {
+      display: flex;
+      min-height: 76px;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 15px;
+      font-weight: 900;
+      letter-spacing: 0.02em;
+    }
+
+    .brand img {
+      width: 54px;
+      height: 48px;
+      object-fit: contain;
+    }
+
+    .brand-name span {
+      color: var(--gold);
+    }
+
+    .nav-link {
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .nav-link:hover {
+      color: var(--gold);
+    }
+
+    /* Hero */
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: 68px 0 76px;
+      background:
+        radial-gradient(
+          ellipse at 85% 30%,
+          rgba(201, 164, 92, 0.15),
+          transparent 38%
+        ),
+        linear-gradient(135deg, #19191D, #0B0B0D 68%);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      align-items: center;
+      gap: 52px;
+    }
+
+    .hero h1 {
+      max-width: 680px;
+      margin: 18px 0;
+      font-size: clamp(40px, 6vw, 72px);
+      font-weight: 900;
+      line-height: 0.99;
+      letter-spacing: -0.06em;
+    }
+
+    .hero h1 span {
+      color: var(--gold);
+    }
+
+    .hero-copy {
+      max-width: 510px;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.8;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 26px;
+    }
+
+    .hero-note {
+      margin-top: 20px;
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .hero-visual {
+      position: relative;
+      min-height: 420px;
+      overflow: hidden;
+      border: 1px solid #494039;
+      border-radius: 20px;
+      background:
+        radial-gradient(
+          circle at 70% 25%,
+          rgba(201, 164, 92, 0.22),
+          transparent 40%
+        ),
+        #171619;
+    }
+
+    .hero-visual img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .visual-overlay {
+      position: absolute;
+      inset: 35% 0 0;
+      background: linear-gradient(
+        to bottom,
+        transparent,
+        rgba(11, 11, 13, 0.92)
+      );
+      pointer-events: none;
+    }
+
+    .visual-caption {
+      position: absolute;
+      right: 22px;
+      bottom: 22px;
+      left: 22px;
+      z-index: 1;
+    }
+
+    .visual-caption p {
+      margin: 0;
+      color: #E8E3D9;
+      font-size: 12px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .visual-caption h2 {
+      margin: 5px 0 0;
+      font-size: 24px;
+    }
+
+    /* Offer */
+
+    .offer-section {
+      padding: 0 0 30px;
+    }
+
+    .offer-card {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      gap: 28px;
+      padding: 30px;
+      border: 1px solid rgba(201, 164, 92, 0.42);
+      border-radius: var(--radius);
+      background:
+        linear-gradient(
+          120deg,
+          rgba(201, 164, 92, 0.12),
+          rgba(21, 21, 24, 0.95) 55%
+        );
+    }
+
+    .offer-card h2 {
+      margin: 8px 0;
+      font-size: clamp(25px, 4vw, 38px);
+      line-height: 1.15;
+    }
+
+    .offer-card p {
+      margin-bottom: 0;
+      color: var(--muted);
+    }
+
+    .price-block {
+      text-align: right;
+    }
+
+    .old-price {
+      display: block;
+      color: var(--muted);
+      font-size: 18px;
+      text-decoration: line-through;
+    }
+
+    .new-price {
+      display: block;
+      color: var(--gold);
+      font-size: clamp(42px, 6vw, 60px);
+      font-weight: 900;
+      line-height: 1.1;
+      letter-spacing: -0.05em;
+    }
+
+    .price-caption {
+      display: block;
+      margin-top: 6px;
+      color: var(--muted);
+      font-size: 11px;
+    }
+
+    /* Services */
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .service-card {
+      padding: 23px 18px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--surface);
+    }
+
+    .service-icon {
+      display: grid;
+      width: 44px;
+      height: 44px;
+      place-items: center;
+      border-radius: 10px;
+      background: rgba(201, 164, 92, 0.12);
+      color: var(--gold);
+      font-size: 22px;
+    }
+
+    .service-card h3 {
+      margin: 17px 0 8px;
+      font-size: 16px;
+    }
+
+    .service-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.7;
+    }
+
+    /* Images and studio */
+
+    .studio-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .studio-card {
+      overflow: hidden;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--surface);
+    }
+
+    .studio-card img {
+      width: 100%;
+      height: 260px;
+      object-fit: cover;
+    }
+
+    .studio-card-content {
+      padding: 22px;
+    }
+
+    .studio-card-content h3 {
+      margin: 0 0 8px;
+      font-size: 19px;
+    }
+
+    .studio-card-content p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    /* Previous work */
+
+    .samples-panel {
+      padding: 28px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--surface);
+    }
+
+    .samples-panel h3 {
+      margin-top: 0;
+      font-size: 22px;
+    }
+
+    .samples-panel p {
+      color: var(--muted);
+    }
+
+    .sample-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 22px;
+    }
+
+    .spotify-frame {
+      display: block;
+      width: 100%;
+      height: 352px;
+      margin-top: 20px;
+      border: 0;
+      border-radius: 12px;
+      background: var(--bg);
+    }
+
+    /* Location */
+
+    .location-card {
+      display: grid;
+      grid-template-columns: 1fr 0.8fr;
+      gap: 30px;
+      padding: 30px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--surface);
+    }
+
+    .location-card h3 {
+      margin: 8px 0;
+      font-size: 25px;
+    }
+
+    .address {
+      color: var(--muted);
+      line-height: 1.8;
+    }
+
+    .contact-list {
+      display: grid;
+      gap: 12px;
+      align-content: center;
+    }
+
+    .contact-item {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 16px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      background: var(--bg);
+    }
+
+    .contact-item strong {
+      font-size: 14px;
+    }
+
+    .contact-item a {
+      color: var(--gold);
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    /* Final CTA */
+
+    .final-cta {
+      padding: 70px 0;
+      text-align: center;
+      background:
+        radial-gradient(
+          ellipse at 50% 100%,
+          rgba(201, 164, 92, 0.12),
+          transparent 60%
+        );
+      border-top: 1px solid var(--border);
+    }
+
+    .final-cta h2 {
+      max-width: 760px;
+      margin: 12px auto;
+      font-size: clamp(30px, 5vw, 48px);
+      line-height: 1.12;
+      letter-spacing: -0.04em;
+    }
+
+    .final-cta p {
+      max-width: 550px;
+      margin: 16px auto 24px;
+      color: var(--muted);
+    }
+
+    footer {
+      padding: 25px 0;
+      border-top: 1px solid var(--border);
+    }
+
+    .footer-content {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .footer-content p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .footer-links a:hover {
+      color: var(--gold);
+    }
+
+    @media (max-width: 900px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 34px;
+      }
+
+      .hero-visual {
+        min-height: 390px;
+      }
+
+      .service-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .offer-card {
+        grid-template-columns: 1fr;
+      }
+
+      .price-block {
+        text-align: left;
+      }
+
+      .location-card {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .container {
+        width: min(100% - 28px, var(--content));
+      }
+
+      .section {
+        padding: 58px 0;
+      }
+
+      .hero {
+        padding: 50px 0;
+      }
+
+      .hero-visual {
+        min-height: 310px;
+      }
+
+      .hero-actions {
+        display: grid;
+        grid-template-columns: 1fr;
+      }
+
+      .hero-actions .btn,
+      .sample-actions .btn {
+        width: 100%;
+      }
+
+      .offer-card,
+      .location-card,
+      .samples-panel {
+        padding: 22px;
+      }
+
+      .service-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .studio-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .studio-card img {
+        height: 230px;
+      }
+
+      .contact-item {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .spotify-frame {
+        height: 352px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *, *::before, *::after {
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="site-header">
+    <nav class="container nav" aria-label="Main navigation">
+      <a class="brand" href="index.html" aria-label="rocksKING Productions home">
+        <img src="images/rocksking-logo.png" alt="">
+        <span class="brand-name">rocks<span>KING</span></span>
+      </a>
+
+      <a class="nav-link" href="index.html">← Back to website</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- CAMPAIGN HERO -->
+    <section class="hero">
+      <div class="container hero-grid">
+
+        <div>
+          <p class="eyebrow">rocksKING Productions presents</p>
+
+          <h1>
+            One Month<br>
+            Studio <span>Bonanza.</span>
+          </h1>
+
+          <p class="hero-copy">
+            Your sound deserves the full treatment. Bring your musical
+            vision to life with professional beat production, recording,
+            mixing and mastering at rocksKING Studio.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-gold" href="#book">
+              Book your session ↗
+            </a>
+
+            <a class="btn btn-outline" href="#samples">
+              Hear our work
+            </a>
+          </div>
+
+          <p class="hero-note">
+            In-studio production at our Wuye Branch.
+            Remote recording and mixing also available.
+          </p>
+        </div>
+
+        <div class="hero-visual">
+          <!-- Add images/bonanza-producer.jpg to your project -->
+          <img
+            src="images/bonanza-producer.jpg"
+            alt="rocksKING music producer"
+            fetchpriority="high"
+          >
+
+          <div class="visual-overlay"></div>
+
+          <div class="visual-caption">
+            <p>Sound. Craft. Creativity.</p>
+            <h2>Make your imagination loud.</h2>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SPECIAL OFFER -->
+    <section class="offer-section">
+      <div class="container">
+        <div class="offer-card">
+
+          <div>
+            <p class="eyebrow">One Month Studio Bonanza & Discount</p>
+
+            <h2>One complete song. Four essential services.</h2>
+
+            <p>
+              Beat production, studio recording, mixing and mastering
+              included in one production package.
+            </p>
+          </div>
+
+          <div class="price-block">
+            <span class="old-price">₦300,000</span>
+            <span class="new-price">₦65,000</span>
+            <span class="price-caption">Full song production</span>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- PACKAGE INCLUDES -->
+    <section class="section">
+      <div class="container">
+
+        <div class="section-heading">
+          <p class="eyebrow">The production package</p>
+          <h2>Everything your song needs.</h2>
+          <p>
+            From the first beat to the final master, bring your song
+            together with the essential production stages in one package.
+          </p>
+        </div>
+
+        <div class="service-grid">
+
+          <article class="service-card">
+            <div class="service-icon" aria-hidden="true">♫</div>
+            <h3>Beat Production</h3>
+            <p>
+              Build the musical foundation of your song around your
+              creative direction.
+            </p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon" aria-hidden="true">●</div>
+            <h3>Studio Recording</h3>
+            <p>
+              Record your vocals and bring your performance into the
+              production process.
+            </p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon" aria-hidden="true">≋</div>
+            <h3>Mixing</h3>
+            <p>
+              Bring the individual elements together into a cohesive
+              and balanced sound.
+            </p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon" aria-hidden="true">✦</div>
+            <h3>Mastering</h3>
+            <p>
+              Give your finished mix its final audio polish.
+            </p>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- STUDIO VISUALS -->
+    <section class="section" style="background:#111114; border-block:1px solid #303035;">
+      <div class="container">
+
+        <div class="section-heading">
+          <p class="eyebrow">The creative space</p>
+          <h2>Where your sound comes together.</h2>
+          <p>
+            A creative environment for turning musical ideas into
+            finished productions.
+          </p>
+        </div>
+
+        <div class="studio-grid">
+
+          <article class="studio-card">
+            <!-- Add images/bonanza-studio.jpg to your project -->
+            <img
+              src="images/bonanza-studio.jpg"
+              alt="Music production session at rocksKING Studio"
+              loading="lazy"
+            >
+
+            <div class="studio-card-content">
+              <h3>Built around the music</h3>
+              <p>
+                From recording to the finishing stages, focus on bringing
+                your musical vision to life.
+              </p>
+            </div>
+          </article>
+
+          <article class="studio-card">
+            <!-- Add images/bonanza-team.jpg to your project -->
+            <img
+              src="images/bonanza-team.jpg"
+              alt="rocksKING Productions team and collaborators"
+              loading="lazy"
+            >
+
+            <div class="studio-card-content">
+              <h3>Creative collaboration</h3>
+              <p>
+                Your ideas, your direction, and a collaborative approach
+                to making music.
+              </p>
+            </div>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- PREVIOUS WORK -->
+    <section class="section" id="samples">
+      <div class="container">
+
+        <div class="section-heading">
+          <p class="eyebrow">Previous productions</p>
+          <h2>Hear what we've been creating.</h2>
+          <p>
+            Explore selected music and work associated with rocksKING
+            Productions before getting in touch about your own project.
+          </p>
+        </div>
+
+        <div class="samples-panel">
+          <h3>Listen to the rocksKING playlist</h3>
+
+          <p>
+            Explore tracks featured in the studio's public music playlist.
+          </p>
+
+          <iframe
+            class="spotify-frame"
+            src="https://open.spotify.com/embed/playlist/6aDRsVNRDtjHYt2muBMaMd?utm_source=generator"
+            title="rocksKING Productions music playlist"
+            loading="lazy"
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+            referrerpolicy="strict-origin-when-cross-origin"
+          ></iframe>
+
+          <div class="sample-actions">
+            <a
+              class="btn btn-outline"
+              href="https://open.spotify.com/playlist/6aDRsVNRDtjHYt2muBMaMd"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Open Spotify playlist ↗
+            </a>
+
+            <a
+              class="btn btn-outline"
+              href="https://www.reverbnation.com/rocksking/playlist/-4"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Explore more music ↗
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- LOCATION AND BOOKING -->
+    <section class="section" id="book" style="background:#111114; border-block:1px solid #303035;">
+      <div class="container">
+
+        <div class="section-heading">
+          <p class="eyebrow">Your next session starts here</p>
+          <h2>Let's work on your song.</h2>
+          <p>
+            Contact the studio to enquire about the bonanza, discuss
+            your project and arrange your next steps.
+          </p>
+        </div>
+
+        <div class="location-card">
+
+          <div>
+            <p class="eyebrow">Visit the Wuye Branch</p>
+
+            <h3>The Media Studio</h3>
+
+            <p class="address">
+              Thuja Ville Estate,<br>
+              Wuye, AMAC,<br>
+              Abuja, Nigeria.
+            </p>
+
+            <p class="muted">
+              Can't make it to the studio? Remote recording and mixing
+              are also available.
+            </p>
+
+            <a
+              class="btn btn-outline"
+              href="https://maps.app.goo.gl/XC81TNEo7gkLFEPb9"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              View studio location ↗
+            </a>
+          </div>
+
+          <div class="contact-list">
+
+            <div class="contact-item">
+              <strong>0813 1666 536</strong>
+
+              <a
+                href="https://wa.me/2348131666536?text=Hello%20rocksKING%20Productions%2C%20I%27m%20interested%20in%20the%20Studio%20Bonanza."
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Enquire on WhatsApp ↗
+              </a>
+            </div>
+
+            <div class="contact-item">
+              <strong>0813 042 1230</strong>
+
+              <a
+                href="https://wa.me/2348130421230?text=Hello%20rocksKING%20Productions%2C%20I%27m%20interested%20in%20the%20Studio%20Bonanza."
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Enquire on WhatsApp ↗
+              </a>
+            </div>
+
+            <a class="btn btn-gold" href="tel:+2348131666536">
+              Call the studio ↗
+            </a>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section class="final-cta">
+      <div class="container">
+        <p class="eyebrow">Your music. Your vision.</p>
+
+        <h2>
+          Ready to make your imagination loud?
+        </h2>
+
+        <p>
+          Get in touch with rocksKING Productions to discuss your song
+          and the Studio Bonanza package.
+        </p>
+
+        <a
+          class="btn btn-gold"
+          href="https://wa.me/2348130421230?text=Hello%20rocksKING%20Productions%2C%20I%27d%20like%20to%20enquire%20about%20the%20Studio%20Bonanza."
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Enquire about the bonanza ↗
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container footer-content">
+
+      <div>
+        <strong>
+          rocks<span class="gold">KING</span> Productions
+        </strong>
+        <p>Making your imagination loud.</p>
+      </div>
+
+      <div class="footer-links">
+        <a href="index.html">Main website</a>
+
+        <a
+          href="https://instagram.com/rockskingprod"
+          target="_blank"
+          rel="noopener noreferrer"
+        >Instagram</a>
+
+        <a
+          href="https://youtube.com/@rockskingprod"
+          target="_blank"
+          rel="noopener noreferrer"
+        >YouTube</a>
+
+        <a href="mailto:rockskingmediahub@gmail.com">
+          Email
+        </a>
+      </div>
+
+      <p>© <span id="year"></span> rocksKING Productions</p>
+
+    </div>
+  </footer>
+
+  <script>
+    document.querySelector("#year").textContent =
+      new Date().getFullYear();
+  </script>
+
+</body>
+</html>
