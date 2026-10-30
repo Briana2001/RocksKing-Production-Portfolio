@@ -1,0 +1,838 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#111111">
+  <meta name="description" content="rocksKING Productions Referral Hub">
+  <title>rocksKING 15% Referral Hub</title>
+
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #111111;
+      --card: #1a1a1a;
+      --gold: #C9A45C;
+      --text: #ffffff;
+      --muted: #b8b8b8;
+      --border: #393939;
+      --green: #25d366;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(17,17,17,.97);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(12px);
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: auto;
+      padding: 0 24px;
+    }
+
+    .nav {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--text);
+      text-decoration: none;
+      font-size: 1.2rem;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .brand img {
+      width: 42px;
+      height: 42px;
+      object-fit: contain;
+    }
+
+    .brand span span { color: var(--gold); }
+
+    .nav-link {
+      color: var(--text);
+      text-decoration: none;
+      font-size: .9rem;
+    }
+
+    .nav-link:hover { color: var(--gold); }
+
+    .wrap {
+      width: 100%;
+      max-width: 796px;
+      margin: auto;
+      padding: 24px 18px 48px;
+    }
+
+    .card {
+      padding: 20px;
+      margin-bottom: 16px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+    }
+
+    h1 {
+      margin: 0 0 8px;
+      color: var(--gold);
+      font-size: clamp(1.45rem, 4vw, 2rem);
+    }
+
+    h2 {
+      margin: 0 0 14px;
+      font-size: 1.1rem;
+    }
+
+    p { line-height: 1.5; }
+
+    .muted {
+      color: var(--muted);
+      font-size: .9rem;
+    }
+
+    .branch-note {
+      margin: 16px 0;
+      padding: 12px;
+      border-left: 3px solid var(--gold);
+      background: #171717;
+      font-size: .9rem;
+    }
+
+    label {
+      display: block;
+      margin: 14px 0 6px;
+      font-size: .9rem;
+    }
+
+    input, select {
+      display: block;
+      width: 100%;
+      min-width: 0;
+      padding: 12px;
+      color: var(--text);
+      background: #101010;
+      border: 1px solid #555;
+      border-radius: 7px;
+      font: inherit;
+    }
+
+    input:focus-visible,
+    select:focus-visible,
+    button:focus-visible,
+    a:focus-visible {
+      outline: 2px solid var(--gold);
+      outline-offset: 3px;
+    }
+
+    button, .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      margin-top: 12px;
+      padding: 12px 15px;
+      border: 0;
+      border-radius: 7px;
+      background: var(--gold);
+      color: #171717;
+      font: inherit;
+      font-weight: 700;
+      text-align: center;
+      text-decoration: none;
+      cursor: pointer;
+      transition: background .2s ease, opacity .2s ease;
+    }
+
+    button:hover, .button:hover { background: #d8b875; }
+
+    button:disabled {
+      opacity: .6;
+      cursor: wait;
+    }
+
+    button.secondary {
+      background: transparent;
+      color: var(--gold);
+      border: 1px solid var(--gold);
+    }
+
+    button.secondary:hover { background: #252017; }
+
+    button.whatsapp {
+      background: var(--green);
+      color: #062b14;
+    }
+
+    button.whatsapp:hover { background: #45df80; }
+
+    .actions {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .actions button { margin-top: 12px; }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .stat {
+      min-width: 0;
+      padding: 14px;
+      border: 1px solid var(--border);
+      border-radius: 9px;
+    }
+
+    .stat span {
+      display: block;
+      color: var(--muted);
+      font-size: .82rem;
+    }
+
+    .stat strong {
+      display: block;
+      margin-top: 7px;
+      font-size: 1.2rem;
+      overflow-wrap: anywhere;
+    }
+
+    #dashboard, #register-panel, #otp-panel {
+      display: none;
+    }
+
+    #message {
+      display: none;
+      margin-top: 12px;
+      padding: 12px;
+      border: 1px solid var(--border);
+      border-radius: 7px;
+      background: #222;
+      font-size: .9rem;
+      overflow-wrap: anywhere;
+    }
+
+    #message[data-type="error"] { border-color: #b74b4b; }
+    #message[data-type="success"] { border-color: #388e5a; }
+
+    .hidden { display: none !important; }
+
+    .section-divider {
+      height: 1px;
+      margin: 20px 0;
+      background: var(--border);
+    }
+
+    .small-note {
+      color: var(--muted);
+      font-size: .8rem;
+    }
+
+    @media (max-width: 600px) {
+      .container { padding: 0 16px; }
+      .nav { min-height: 64px; gap: 10px; }
+      .brand { gap: 7px; font-size: 1rem; }
+      .brand img { width: 34px; height: 34px; }
+      .nav-link { font-size: .78rem; text-align: right; }
+      .wrap { padding: 18px 12px 36px; }
+      .card { padding: 15px; }
+      .actions { grid-template-columns: 1fr; gap: 0; }
+    }
+
+    @media (max-width: 360px) {
+      .brand { font-size: .9rem; }
+      .brand img { width: 29px; height: 29px; }
+      .nav-link { font-size: .72rem; }
+      .grid { gap: 7px; }
+      .stat { padding: 10px; }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="site-header">
+    <nav class="container nav" aria-label="Main navigation">
+      <a class="brand" href="index.html" aria-label="rocksKING Productions home">
+        <img src="images/rocksking-logo.png" alt="">
+        <span>rocks<span>KING</span></span>
+      </a>
+
+      <a class="nav-link" href="index.html">← Back to Home</a>
+    </nav>
+  </header>
+
+  <main class="wrap">
+    <section class="card">
+      <h1>rocksKING 15% Referral Hub</h1>
+      <p class="muted">
+        Register as a referrer or access your existing referral dashboard.
+        Verify your email to continue.
+      </p>
+
+      <div class="branch-note">
+        Available branches: <strong>Wuye</strong> and <strong>Kubwa</strong>.
+      </div>
+
+      <div class="actions" id="mode-actions">
+        <button type="button" id="login-mode">Existing Referrer</button>
+        <button type="button" id="register-mode" class="secondary">New Referrer</button>
+      </div>
+
+      <!-- Existing user: request a login OTP -->
+      <form id="login-form">
+        <h2 style="margin-top:20px">Access your account</h2>
+
+        <label for="login-phone">Registered phone number</label>
+        <input
+          id="login-phone"
+          type="tel"
+          inputmode="tel"
+          autocomplete="tel"
+          placeholder="Enter your registered phone"
+          required
+        >
+
+        <button id="login-otp-button" type="submit">
+          Email Me a Login Code
+        </button>
+      </form>
+
+      <!-- New user: request a registration OTP -->
+      <section id="register-panel">
+        <h2 style="margin-top:20px">Create your referral account</h2>
+
+        <form id="register-form">
+          <label for="register-name">Full name</label>
+          <input
+            id="register-name"
+            autocomplete="name"
+            maxlength="100"
+            required
+          >
+
+          <label for="register-email">Email address</label>
+          <input
+            id="register-email"
+            type="email"
+            autocomplete="email"
+            maxlength="254"
+            placeholder="you@example.com"
+            required
+          >
+
+          <label for="register-phone">Phone number</label>
+          <input
+            id="register-phone"
+            type="tel"
+            inputmode="tel"
+            autocomplete="tel"
+            placeholder="Use the number you will register with"
+            required
+          >
+
+          <label for="register-branch">Preferred branch</label>
+          <select id="register-branch" required>
+            <option value="">Select a branch</option>
+            <option value="Wuye">Wuye</option>
+            <option value="Kubwa">Kubwa</option>
+          </select>
+
+          <button id="register-otp-button" type="submit">
+            Send Registration Code
+          </button>
+        </form>
+      </section>
+
+      <!-- Both registration and login verify their email OTP here -->
+      <section id="otp-panel">
+        <div class="section-divider"></div>
+        <h2>Verify your email</h2>
+        <p class="muted" id="otp-description">
+          Enter the six-digit code sent to your email.
+        </p>
+
+        <form id="otp-form">
+          <label for="otp-code">Six-digit verification code</label>
+          <input
+            id="otp-code"
+            inputmode="numeric"
+            autocomplete="one-time-code"
+            pattern="[0-9]{6}"
+            minlength="6"
+            maxlength="6"
+            placeholder="000000"
+            required
+          >
+
+          <button id="verify-button" type="submit">
+            Verify and Continue
+          </button>
+        </form>
+
+        <button type="button" id="back-button" class="secondary">
+          Back
+        </button>
+      </section>
+
+      <div id="message" role="status" aria-live="polite"></div>
+    </section>
+
+    <!-- Authenticated dashboard -->
+    <section id="dashboard" class="card" aria-live="polite">
+      <h2>Your referral dashboard</h2>
+      <p class="muted" id="welcome-message"></p>
+
+      <div class="grid">
+        <div class="stat">
+          <span>Referral code</span>
+          <strong id="promo-code">—</strong>
+        </div>
+        <div class="stat">
+          <span>Total referrals</span>
+          <strong id="referral-count">0</strong>
+        </div>
+        <div class="stat">
+          <span>Unpaid commissions</span>
+          <strong id="unpaid-total">₦0.00</strong>
+        </div>
+        <div class="stat">
+          <span>Paid out</span>
+          <strong id="paid-total">₦0.00</strong>
+        </div>
+      </div>
+
+      <div class="section-divider"></div>
+
+      <form id="bank-form">
+        <h2>Payout details</h2>
+        <p class="muted">
+          Enter the account where your approved referral commissions should be paid.
+        </p>
+
+        <label for="full-name">Account holder's name</label>
+        <input id="full-name" autocomplete="name" maxlength="100" required>
+
+        <label for="bank-name">Bank name</label>
+        <input id="bank-name" maxlength="100" required>
+
+        <label for="account-number">Account number</label>
+        <input
+          id="account-number"
+          inputmode="numeric"
+          autocomplete="off"
+          pattern="[0-9]{10}"
+          minlength="10"
+          maxlength="10"
+          placeholder="10-digit account number"
+          required
+        >
+
+        <button id="save-button" type="submit">Save Payout Details</button>
+      </form>
+
+      <button id="share-button" class="whatsapp" type="button">
+        Share Referral on WhatsApp
+      </button>
+
+      <button id="logout-button" class="secondary" type="button">
+        Log Out
+      </button>
+
+      <p class="small-note">
+        Commission eligibility and payout approval are subject to the rocksKING
+        referral programme's terms.
+      </p>
+    </section>
+  </main>
+
+  <script>
+    "use strict";
+
+    // Replace this with the CURRENT deployed Apps Script web-app URL.
+    const SCRIPT_URL =
+      "https://script.google.com/macros/s/AKfycbx8QH0wXjD1JsZGMrljXZ5FWYnqaPFc2sHmhvo8GWGa32Vxqqevu7UQGsB_vj748-8s/exec";
+
+    const $ = (id) => document.getElementById(id);
+
+    let currentPurpose = "";
+    let pendingPhone = "";
+    let pendingEmail = "";
+    let sessionToken = "";
+    let currentUser = null;
+
+    const money = new Intl.NumberFormat("en-NG", {
+      style: "currency",
+      currency: "NGN"
+    });
+
+    function showMsg(message, type = "info") {
+      const box = $("message");
+      box.textContent = message;
+      box.dataset.type = type;
+      box.style.display = "block";
+    }
+
+    function clearMsg() {
+      $("message").textContent = "";
+      $("message").style.display = "none";
+      $("message").dataset.type = "info";
+    }
+
+    function setBusy(button, busy, busyText, normalText) {
+      button.disabled = busy;
+      button.textContent = busy ? busyText : normalText;
+    }
+
+    // POST JSON to Apps Script. Never send bank details in a URL.
+    async function callBackend(payload) {
+      let response;
+
+      try {
+        response = await fetch(SCRIPT_URL, {
+          method: "POST",
+          headers: {
+            "Content-Type": "text/plain;charset=utf-8"
+          },
+          body: JSON.stringify(payload),
+          cache: "no-store"
+        });
+      } catch (error) {
+        throw new Error(
+          "Could not connect to the referral service. Check the deployment URL, access settings, and browser console."
+        );
+      }
+
+      let data;
+
+      try {
+        data = await response.json();
+      } catch (error) {
+        throw new Error(
+          "The service returned an unreadable response. Check the Apps Script deployment and browser console."
+        );
+      }
+
+      if (!response.ok || data.success === false || data.error) {
+        throw new Error(
+          data.message || data.error || "The request could not be completed."
+        );
+      }
+
+      return data;
+    }
+
+    function setMode(mode) {
+      clearMsg();
+
+      $("login-form").style.display =
+        mode === "login" ? "block" : "none";
+
+      $("register-panel").style.display =
+        mode === "register" ? "block" : "none";
+
+      $("otp-panel").style.display = "none";
+      $("dashboard").style.display = "none";
+
+      $("login-mode").classList.toggle("secondary", mode !== "login");
+      $("register-mode").classList.toggle("secondary", mode !== "register");
+
+      currentPurpose = "";
+      pendingPhone = "";
+      pendingEmail = "";
+    }
+
+    $("login-mode").addEventListener("click", () => setMode("login"));
+    $("register-mode").addEventListener("click", () => setMode("register"));
+
+    // Request login OTP.
+    $("login-form").addEventListener("submit", async (event) => {
+      event.preventDefault();
+      clearMsg();
+
+      const phone = $("login-phone").value.trim();
+      const button = $("login-otp-button");
+
+      currentPurpose = "login";
+      pendingPhone = phone;
+      pendingEmail = "";
+
+      setBusy(button, true, "Requesting code…", "Email Me a Login Code");
+
+      try {
+        const result = await callBackend({
+          action: "requestOtp",
+          purpose: "login",
+          phone
+        });
+
+        showMsg(
+          result.message ||
+            "If an active account exists, a code will be sent to its registered email.",
+          "success"
+        );
+
+        $("otp-description").textContent =
+          "Enter the six-digit code sent to the email registered to your account.";
+
+        $("otp-panel").style.display = "block";
+        $("otp-code").value = "";
+        $("otp-code").focus();
+
+      } catch (error) {
+        showMsg(error.message, "error");
+      } finally {
+        setBusy(button, false, "", "Email Me a Login Code");
+      }
+    });
+
+    // Request registration OTP.
+    $("register-form").addEventListener("submit", async (event) => {
+      event.preventDefault();
+      clearMsg();
+
+      const fullName = $("register-name").value.trim();
+      const email = $("register-email").value.trim();
+      const phone = $("register-phone").value.trim();
+      const branch = $("register-branch").value;
+      const button = $("register-otp-button");
+
+      currentPurpose = "register";
+      pendingPhone = phone;
+      pendingEmail = email;
+
+      setBusy(button, true, "Sending code…", "Send Registration Code");
+
+      try {
+        const result = await callBackend({
+          action: "requestOtp",
+          purpose: "register",
+          fullName,
+          email,
+          phone,
+          branch
+        });
+
+        showMsg(
+          result.message || "Check your email for the verification code.",
+          "success"
+        );
+
+        $("otp-description").textContent =
+          "Enter the six-digit code sent to " + email + ".";
+
+        $("otp-panel").style.display = "block";
+        $("otp-code").value = "";
+        $("otp-code").focus();
+
+      } catch (error) {
+        showMsg(error.message, "error");
+      } finally {
+        setBusy(button, false, "", "Send Registration Code");
+      }
+    });
+
+    // Verify OTP, receive session token, then load dashboard.
+    $("otp-form").addEventListener("submit", async (event) => {
+      event.preventDefault();
+      clearMsg();
+
+      const code = $("otp-code").value.trim();
+      const button = $("verify-button");
+
+      if (!/^\d{6}$/.test(code)) {
+        showMsg("Enter the six-digit verification code.", "error");
+        return;
+      }
+
+      setBusy(button, true, "Verifying…", "Verify and Continue");
+
+      try {
+        const payload = {
+          action: "verifyOtp",
+          purpose: currentPurpose,
+          code
+        };
+
+        if (currentPurpose === "register") {
+          payload.email = pendingEmail;
+        } else {
+          payload.phone = pendingPhone;
+        }
+
+        const result = await callBackend(payload);
+
+        if (!result.token) {
+          throw new Error("The service did not return a session. Please try again.");
+        }
+
+        // Keep the session in memory only. Refreshing the page logs the user out.
+        sessionToken = result.token;
+        currentUser = result.user || null;
+
+        $("login-form").style.display = "none";
+        $("register-panel").style.display = "none";
+        $("otp-panel").style.display = "none";
+        $("mode-actions").style.display = "none";
+
+        await loadDashboard();
+
+        showMsg(
+          result.message || "You are signed in.",
+          "success"
+        );
+
+      } catch (error) {
+        showMsg(error.message, "error");
+      } finally {
+        setBusy(button, false, "", "Verify and Continue");
+      }
+    });
+
+    async function loadDashboard() {
+      if (!sessionToken) {
+        throw new Error("Your session has expired. Please log in again.");
+      }
+
+      const result = await callBackend({
+        action: "lookup",
+        token: sessionToken
+      });
+
+      const user = result.user || {};
+
+      $("welcome-message").textContent =
+        user.name ? "Welcome, " + user.name + "." : "Welcome to your dashboard.";
+
+      $("promo-code").textContent = user.promoCode || "—";
+      $("referral-count").textContent = user.referralCount ?? 0;
+      $("unpaid-total").textContent = money.format(Number(user.unpaid) || 0);
+      $("paid-total").textContent = money.format(Number(user.paidOut) || 0);
+
+      $("full-name").value = user.accountName || "";
+      $("bank-name").value = user.bankName || "";
+
+      // Some spreadsheets may return an account number stored with a
+      // leading apostrophe to prevent spreadsheet formula interpretation.
+      $("account-number").value =
+        String(user.accNum || "").replace(/^'/, "");
+
+      currentUser = user;
+      $("dashboard").style.display = "block";
+    }
+
+    // Save payout details using the authenticated session.
+    $("bank-form").addEventListener("submit", async (event) => {
+      event.preventDefault();
+      clearMsg();
+
+      if (!sessionToken) {
+        showMsg("Please log in again before updating payout details.", "error");
+        return;
+      }
+
+      const name = $("full-name").value.trim();
+      const bankName = $("bank-name").value.trim();
+      const accNum = $("account-number").value.trim();
+      const button = $("save-button");
+
+      if (!/^\d{10}$/.test(accNum)) {
+        showMsg("Enter a valid 10-digit account number.", "error");
+        return;
+      }
+
+      setBusy(button, true, "Saving…", "Save Payout Details");
+
+      try {
+        const result = await callBackend({
+          action: "updateBank",
+          token: sessionToken,
+          name,
+          bankName,
+          accNum
+        });
+
+        showMsg(result.message || "Payout details updated.", "success");
+      } catch (error) {
+        showMsg(error.message, "error");
+      } finally {
+        setBusy(button, false, "", "Save Payout Details");
+      }
+    });
+
+    $("share-button").addEventListener("click", () => {
+      if (!sessionToken || !currentUser) {
+        showMsg("Please log in first.", "error");
+        return;
+      }
+
+      const code = currentUser.promoCode || $("promo-code").textContent;
+
+      if (!code || code === "—") {
+        showMsg("Your referral code is not available yet.", "error");
+        return;
+      }
+
+      const message =
+        "Join rocksKING Productions through my referral code: " +
+        code +
+        ". Ask rocksKING about the referral programme for details.";
+
+      const url = "https://wa.me/?text=" + encodeURIComponent(message);
+
+      window.open(url, "_blank", "noopener,noreferrer");
+    });
+
+    $("back-button").addEventListener("click", () => {
+      clearMsg();
+      $("otp-panel").style.display = "none";
+      $("otp-code").value = "";
+    });
+
+    $("logout-button").addEventListener("click", () => {
+      // The backend session will expire naturally. This clears the browser session.
+      sessionToken = "";
+      currentUser = null;
+      currentPurpose = "";
+      pendingPhone = "";
+      pendingEmail = "";
+
+      $("dashboard").style.display = "none";
+      $("mode-actions").style.display = "grid";
+      $("login-form").reset();
+      $("register-form").reset();
+      $("otp-form").reset();
+
+      setMode("login");
+      showMsg("You have been logged out.", "success");
+    });
+
+    // Start on the existing-referrer login screen.
+    setMode("login");
+  </script>
+</body>
+</html>
